@@ -1050,7 +1050,7 @@
           });
 
           // Save button click handler
-          actionDiv.querySelector('.save-btn').addEventListener('click', async () => {
+          actionDiv.querySelector('.save-btn').addEventListener('click', () => {
             const editableElements = section.querySelectorAll('[contenteditable="true"]');
             editableElements.forEach(el => {
               el.contentEditable = false;
@@ -1059,22 +1059,8 @@
             actionDiv.classList.remove('active');
             editButton.style.display = 'flex';
             
-            // Save changes to GitHub
-            const sectionId = section.getAttribute('data-section-id');
-            const content = loadContent();
-            
-            if (content) {
-              // Update the relevant section in the content
-              const updatedContent = updateContentSection(content, sectionId, section);
-              
-              // Save to GitHub
-              const saved = await updateGitHubContent(updatedContent);
-              if (saved) {
-                showNotification('Changes saved successfully!', 'success');
-              } else {
-                showNotification('Failed to save changes. Please try again.', 'error');
-              }
-            }
+            // Here you would typically save the changes to a backend
+            console.log('Changes saved!');
           });
 
           // Cancel button click handler

@@ -1050,7 +1050,7 @@
           });
 
           // Save button click handler
-          actionDiv.querySelector('.save-btn').addEventListener('click', async () => {
+          actionDiv.querySelector('.save-btn').addEventListener('click', () => {
             const editableElements = section.querySelectorAll('[contenteditable="true"]');
             editableElements.forEach(el => {
               el.contentEditable = false;
