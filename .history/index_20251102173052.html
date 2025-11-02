@@ -10,20 +10,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
-      .experience-section {
-        transition: all 0.3s ease;
-      }
-      
-      .active-section {
-        transform: scale(1.02);
-      }
-      
-      .active-btn {
-        background-color: rgba(255, 255, 255, 0.3) !important;
-        transform: translateY(-4px) !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
       .gradient-bg {
         background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
       }
@@ -109,52 +95,22 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20 relative">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col items-center">
-          <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gray-200 overflow-hidden shadow-xl mb-8 border-4 border-white">
-            <img src="linkin_profile_pic.jpeg" alt="Profile" class="w-full h-full object-cover">
-          </div>
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">Hi, I'm Andrew</h1>
-          <h2 class="text-2xl md:text-3xl font-semibold mb-8">
-            Database & Application Developer
-          </h2>
-          <div class="text-center max-w-3xl mx-auto">
-            <p class="text-xl mb-6">
-              Full-stack developer and database specialist crafting scalable solutions 
-              that bridge business operations with new technology
-            </p>
-            <p class="text-lg opacity-90 mb-8">
-              From developing logistics platforms for global shipping to 
-              building power monitoring systems for critical facilities —
-              I transform complex challenges into efficient solutions.
-            </p>
-   
-            <div class="flex flex-wrap justify-center gap-4 mt-8">
-              <button 
-                onclick="scrollToExperience('flaship')"
-                class="exp-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg transition-all duration-300 border border-white border-opacity-30 backdrop-blur-sm hover:transform hover:-translate-y-1"
-              >
-                <span class="block text-lg font-semibold">Flaship (SF Express)</span>
-                <span class="block text-sm opacity-80">Logistics Platform Development</span>
-              </button>
-              <button 
-                onclick="scrollToExperience('powerpeg')"
-                class="exp-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg transition-all duration-300 border border-white border-opacity-30 backdrop-blur-sm hover:transform hover:-translate-y-1"
-              >
-                <span class="block text-lg font-semibold">PowerPeg</span>
-                <span class="block text-sm opacity-80">Power Monitoring Solutions</span>
-              </button>
-              <button 
-                onclick="scrollToExperience('trade-fairs')"
-                class="exp-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg transition-all duration-300 border border-white border-opacity-30 backdrop-blur-sm hover:transform hover:-translate-y-1"
-              >
-                <span class="block text-lg font-semibold">HKTDC</span>
-                <span class="block text-sm opacity-80">Sales & technical Assistant</span>
-              </button>
-            </div>
-          </div>
-        </div>
+    <section class="gradient-bg text-white py-20">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Hi, I'm Andrew<! /h1>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-8">
+          Database & Application Developer
+        </h2>
+        <p class="text-xl max-w-2xl mx-auto mb-10">
+          Specializing in building efficient database solutions and
+          cross-platform applications to optimize workflows and improve
+          operational efficiency.
+        </p>
+        <a
+          href="#contact"
+          class="bg-white text-blue-600 font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300 inline-block"
+          >Contact Me</a
+        >
       </div>
     </section>
 
@@ -162,8 +118,18 @@
     <section id="about" class="py-20 bg-white">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-16">About Me</h2>
-        <div class="max-w-4xl mx-auto">
-          <div class="md:w-full">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+            <div
+              class="w-64 h-64 rounded-full bg-gray-200 overflow-hidden shadow-xl"
+            >
+              <!-- Placeholder for profile image -->  
+              <img src="linkin_profile_pic.jpeg" alt="Profile" class="w-full h-full object-cover">
+                <i class="fas fa-user text-6xl"></i>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-2/3 md:pl-12">
             <p class="text-lg mb-6">
               I am a passionate Database and Application Developer with hands-on experience building data-driven solutions across healthcare, public services, and international trade. My focus is on developing systems that simplify complex workflows, improve efficiency, and elevate user experience — turning fragmented operations into cohesive, intelligent platforms.
             </p>
@@ -205,7 +171,7 @@
 
         <div class="max-w-4xl mx-auto">
           <!-- SF Express / FlashShip -->
-          <div id="flaship" class="mb-12 relative pl-8 timeline-item experience-section">
+          <div class="mb-12 relative pl-8 timeline-item">
             <div
               class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-blue-200"
             ></div>
@@ -252,7 +218,7 @@
           </div>
 
           <!-- PowerPeg -->
-          <div id="powerpeg" class="mb-12 relative pl-8 timeline-item experience-section">
+          <div class="mb-12 relative pl-8 timeline-item">
             <div
               class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-blue-200"
             ></div>
@@ -297,7 +263,7 @@
           </div>
 
           <!-- Trade Fairs -->
-          <div id="trade-fairs" class="mb-12 relative pl-8 timeline-item experience-section">
+          <div class="mb-12 relative pl-8 timeline-item">
             <div
               class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-blue-200"
             ></div>
@@ -307,10 +273,10 @@
               <div
                 class="flex flex-col md:flex-row md:justify-between md:items-center mb-4"
               >
-                <h3 class="text-xl font-bold">Sales & technical Assistant</h3>
+                <h3 class="text-xl font-bold">Technical Operations Manager</h3>
                 <span class="text-blue-600 font-medium">Hong Kong Trade Development Council (HKTDC) </span>
               </div>
-              <div class="text-gray-500 mb-4">Hong Kong •  2020 - 2022</div>
+              <div class="text-gray-500 mb-4">Hong Kong  2020 - 2022</div>
               <ul class="list-disc pl-5 space-y-2">
                 <li>
                   Managed key operations for trade fairs, providing on-site
@@ -847,34 +813,6 @@
     </footer>
 
     <style>
-      @keyframes changeColor {
-        0% { border-color: #3b82f6; }
-        25% { border-color: #8b5cf6; }
-        50% { border-color: #10b981; }
-        75% { border-color: #ef4444; }
-        100% { border-color: #3b82f6; }
-      }
-
-      .bouncing-image {
-        width: 180px;
-        height: 180px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        cursor: pointer;
-        transition: all 0.05s linear;
-      }
-
-      .bouncing-image img {
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        border: 4px solid #3b82f6;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        animation: changeColor 8s linear infinite;
-      }
-
       /* Edit Mode Styles */
       .edit-button {
         position: absolute;
@@ -1088,11 +1026,6 @@
       <i class="fas fa-home text-xl"></i>
     </div>
 
-    <!-- Bouncing Image -->
-    <div class="bouncing-image">
-      <img src="images/me_1.jpg" alt="Bouncing Profile Picture">
-    </div>
-
     <!-- Chatbot UI -->
     <div class="chatbot-container">
       <div class="chatbot-header">
@@ -1110,63 +1043,6 @@
     </button>
 
     <script>
-      // Bouncing Image Animation
-      const bouncingImage = document.querySelector('.bouncing-image');
-      let x = 0;
-      let y = 0;
-      let xSpeed = 2;
-      let ySpeed = 2;
-      let lastTime = performance.now();
-      const fps = 60;
-      const interval = 1000 / fps;
-
-      function animate(currentTime) {
-        if (currentTime - lastTime >= interval) {
-          const viewportWidth = window.innerWidth - bouncingImage.offsetWidth;
-          const viewportHeight = window.innerHeight - bouncingImage.offsetHeight;
-
-          // Update position
-          x += xSpeed;
-          y += ySpeed;
-
-          // Check for collisions with viewport edges
-          if (x <= 0 || x >= viewportWidth) {
-            xSpeed = -xSpeed;
-            changeBorderColor();
-          }
-          if (y <= 0 || y >= viewportHeight) {
-            ySpeed = -ySpeed;
-            changeBorderColor();
-          }
-
-          // Keep within bounds
-          x = Math.max(0, Math.min(x, viewportWidth));
-          y = Math.max(0, Math.min(y, viewportHeight));
-
-          // Update position
-          bouncingImage.style.transform = `translate(${x}px, ${y}px)`;
-          lastTime = currentTime;
-        }
-        requestAnimationFrame(animate);
-      }
-
-      function changeBorderColor() {
-        const colors = ['#3b82f6', '#8b5cf6', '#10b981', '#ef4444'];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        bouncingImage.querySelector('img').style.borderColor = randomColor;
-      }
-
-      // Start animation
-      requestAnimationFrame(animate);
-
-      // Adjust bouncing image position on window resize
-      window.addEventListener('resize', () => {
-        const viewportWidth = window.innerWidth - bouncingImage.offsetWidth;
-        const viewportHeight = window.innerHeight - bouncingImage.offsetHeight;
-        x = Math.min(x, viewportWidth);
-        y = Math.min(y, viewportHeight);
-      });
-
       /* Edit functionality commented out
       // GitHub API Configuration
       const GITHUB_TOKEN = ''; // You'll need to add your GitHub token here
@@ -1310,24 +1186,8 @@
       const chatInput = document.querySelector(".chatbot-input input");
       const chatSend = document.querySelector(".chatbot-send");
       const chatMessages = document.querySelector(".chatbot-messages");
-      const bouncingProfilePic = document.querySelector(".bouncing-image");
 
       let isChatOpen = false;
-
-      function openChatWithGreeting(fromBouncing = false) {
-        isChatOpen = true;
-        chatbotContainer.classList.add("active");
-        chatMessages.innerHTML = ''; // Clear previous messages
-        
-        if (fromBouncing) {
-          addBotMessage("Hi there! 👋 I noticed you clicked on Andrew's bouncing picture!");
-          setTimeout(() => {
-            addBotMessage("Would you like to get in touch with Andrew directly? I can help you reach out to him, or feel free to ask me anything about his work and experience!");
-          }, 1000);
-        } else {
-          addBotMessage("Hello! I'm your AI assistant. How can I help you today?");
-        }
-      }
 
       // Toggle chatbot visibility
       chatbotToggle.addEventListener("click", () => {
@@ -1335,13 +1195,10 @@
         chatbotContainer.classList.toggle("active", isChatOpen);
 
         if (isChatOpen) {
-          openChatWithGreeting();
+          addBotMessage(
+            "Hello! I'm your AI assistant. How can I help you today?"
+          );
         }
-      });
-
-      // Add click handler for bouncing image
-      bouncingProfilePic.addEventListener("click", () => {
-        openChatWithGreeting(true);
       });
 
       chatbotClose.addEventListener("click", () => {
@@ -1354,48 +1211,28 @@
         greeting: "Hello! I'm your AI assistant. How can I help you today?",
         default: "I'm still learning. Could you rephrase that?",
         goodbye: "Goodbye! Have a great day!",
-        contact: "You can reach Andrew directly at andrewipwork@gmail.com, or connect with him on LinkedIn at linkedin.com/in/andrewipwork. Would you like me to show you his other social media profiles as well?",
-        social: "Here are Andrew's social profiles:\n• LinkedIn: linkedin.com/in/andrewipwork\n• GitHub: github.com/andrewip1027\n• Twitter: x.com/andrewipdev",
-        schedule: "Would you like to schedule a meeting with Andrew? You can use the contact form in the contact section, or email him directly at andrewipwork@gmail.com with your preferred time and date."
       };
 
       // Send message
       function sendMessage() {
-        const message = chatInput.value.trim().toLowerCase();
+        const message = chatInput.value.trim();
         if (message) {
           addUserMessage(message);
           chatInput.value = "";
 
-          // Enhanced response logic
+          // Simple response logic
           let response = aiResponses.default;
 
-          if (message.includes("hello") || message.includes("hi")) {
+          if (
+            message.toLowerCase().includes("hello") ||
+            message.toLowerCase().includes("hi")
+          ) {
             response = aiResponses.greeting;
-          } else if (message.includes("bye") || message.includes("goodbye")) {
+          } else if (
+            message.toLowerCase().includes("bye") ||
+            message.toLowerCase().includes("goodbye")
+          ) {
             response = aiResponses.goodbye;
-          } else if (
-            message.includes("contact") || 
-            message.includes("email") || 
-            message.includes("reach") || 
-            message.includes("talk to") ||
-            message.includes("get in touch")
-          ) {
-            response = aiResponses.contact;
-          } else if (
-            message.includes("social") || 
-            message.includes("profile") || 
-            message.includes("linkedin") ||
-            message.includes("github") ||
-            message.includes("twitter")
-          ) {
-            response = aiResponses.social;
-          } else if (
-            message.includes("schedule") || 
-            message.includes("meet") || 
-            message.includes("appointment") ||
-            message.includes("book")
-          ) {
-            response = aiResponses.schedule;
           }
 
           setTimeout(() => {
@@ -1473,60 +1310,6 @@
               mobileMenu.classList.add("hidden");
             }
           }
-        });
-      });
-
-      // Experience section interactivity
-      function scrollToExperience(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          window.scrollTo({
-            top: element.offsetTop - 100,
-            behavior: 'smooth'
-          });
-          
-          document.querySelectorAll('.experience-section').forEach(section => {
-            section.classList.remove('active-section');
-          });
-          
-          element.classList.add('active-section');
-          
-          document.querySelectorAll('.exp-btn').forEach(btn => {
-            btn.classList.remove('active-btn');
-          });
-          document.querySelector(`[onclick="scrollToExperience('${id}')"]`).classList.add('active-btn');
-        }
-      }
-
-      const experienceObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            document.querySelectorAll('.experience-section').forEach(section => {
-              section.classList.remove('active-section');
-            });
-            
-            entry.target.classList.add('active-section');
-            
-            const sectionId = entry.target.id;
-            document.querySelectorAll('.exp-btn').forEach(btn => {
-              btn.classList.remove('active-btn');
-            });
-            const activeBtn = document.querySelector(`[onclick="scrollToExperience('${sectionId}')"]`);
-            if (activeBtn) {
-              activeBtn.classList.add('active-btn');
-            }
-          }
-        });
-      }, {
-        root: null,
-        rootMargin: '-20% 0px -20% 0px',
-        threshold: 0.5
-      });
-
-      // Initialize observers when DOM is loaded
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.experience-section').forEach(section => {
-          experienceObserver.observe(section);
         });
       });
     </script>

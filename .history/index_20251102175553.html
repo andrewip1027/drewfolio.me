@@ -129,7 +129,9 @@
               building power monitoring systems for critical facilities —
               I transform complex challenges into efficient solutions.
             </p>
-   
+            <div class="flex justify-center mb-10">
+              <img src="images/me_1.jpg" alt="Profile Picture" class="w-16 h-16 rounded-full shadow-lg border-2 border-white">
+            </div>
             <div class="flex flex-wrap justify-center gap-4 mt-8">
               <button 
                 onclick="scrollToExperience('flaship')"
@@ -1354,48 +1356,28 @@
         greeting: "Hello! I'm your AI assistant. How can I help you today?",
         default: "I'm still learning. Could you rephrase that?",
         goodbye: "Goodbye! Have a great day!",
-        contact: "You can reach Andrew directly at andrewipwork@gmail.com, or connect with him on LinkedIn at linkedin.com/in/andrewipwork. Would you like me to show you his other social media profiles as well?",
-        social: "Here are Andrew's social profiles:\n• LinkedIn: linkedin.com/in/andrewipwork\n• GitHub: github.com/andrewip1027\n• Twitter: x.com/andrewipdev",
-        schedule: "Would you like to schedule a meeting with Andrew? You can use the contact form in the contact section, or email him directly at andrewipwork@gmail.com with your preferred time and date."
       };
 
       // Send message
       function sendMessage() {
-        const message = chatInput.value.trim().toLowerCase();
+        const message = chatInput.value.trim();
         if (message) {
           addUserMessage(message);
           chatInput.value = "";
 
-          // Enhanced response logic
+          // Simple response logic
           let response = aiResponses.default;
 
-          if (message.includes("hello") || message.includes("hi")) {
+          if (
+            message.toLowerCase().includes("hello") ||
+            message.toLowerCase().includes("hi")
+          ) {
             response = aiResponses.greeting;
-          } else if (message.includes("bye") || message.includes("goodbye")) {
+          } else if (
+            message.toLowerCase().includes("bye") ||
+            message.toLowerCase().includes("goodbye")
+          ) {
             response = aiResponses.goodbye;
-          } else if (
-            message.includes("contact") || 
-            message.includes("email") || 
-            message.includes("reach") || 
-            message.includes("talk to") ||
-            message.includes("get in touch")
-          ) {
-            response = aiResponses.contact;
-          } else if (
-            message.includes("social") || 
-            message.includes("profile") || 
-            message.includes("linkedin") ||
-            message.includes("github") ||
-            message.includes("twitter")
-          ) {
-            response = aiResponses.social;
-          } else if (
-            message.includes("schedule") || 
-            message.includes("meet") || 
-            message.includes("appointment") ||
-            message.includes("book")
-          ) {
-            response = aiResponses.schedule;
           }
 
           setTimeout(() => {

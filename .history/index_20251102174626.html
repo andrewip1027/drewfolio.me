@@ -129,7 +129,6 @@
               building power monitoring systems for critical facilities —
               I transform complex challenges into efficient solutions.
             </p>
-   
             <div class="flex flex-wrap justify-center gap-4 mt-8">
               <button 
                 onclick="scrollToExperience('flaship')"
@@ -150,7 +149,7 @@
                 class="exp-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg transition-all duration-300 border border-white border-opacity-30 backdrop-blur-sm hover:transform hover:-translate-y-1"
               >
                 <span class="block text-lg font-semibold">HKTDC</span>
-                <span class="block text-sm opacity-80">Sales & technical Assistant</span>
+                <span class="block text-sm opacity-80">Technical Operations</span>
               </button>
             </div>
           </div>
@@ -307,7 +306,7 @@
               <div
                 class="flex flex-col md:flex-row md:justify-between md:items-center mb-4"
               >
-                <h3 class="text-xl font-bold">Sales & technical Assistant</h3>
+                <h3 class="text-xl font-bold">Technical Operations Manager</h3>
                 <span class="text-blue-600 font-medium">Hong Kong Trade Development Council (HKTDC) </span>
               </div>
               <div class="text-gray-500 mb-4">Hong Kong •  2020 - 2022</div>
@@ -847,34 +846,6 @@
     </footer>
 
     <style>
-      @keyframes changeColor {
-        0% { border-color: #3b82f6; }
-        25% { border-color: #8b5cf6; }
-        50% { border-color: #10b981; }
-        75% { border-color: #ef4444; }
-        100% { border-color: #3b82f6; }
-      }
-
-      .bouncing-image {
-        width: 180px;
-        height: 180px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        cursor: pointer;
-        transition: all 0.05s linear;
-      }
-
-      .bouncing-image img {
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        border: 4px solid #3b82f6;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        animation: changeColor 8s linear infinite;
-      }
-
       /* Edit Mode Styles */
       .edit-button {
         position: absolute;
@@ -1088,11 +1059,6 @@
       <i class="fas fa-home text-xl"></i>
     </div>
 
-    <!-- Bouncing Image -->
-    <div class="bouncing-image">
-      <img src="images/me_1.jpg" alt="Bouncing Profile Picture">
-    </div>
-
     <!-- Chatbot UI -->
     <div class="chatbot-container">
       <div class="chatbot-header">
@@ -1110,63 +1076,6 @@
     </button>
 
     <script>
-      // Bouncing Image Animation
-      const bouncingImage = document.querySelector('.bouncing-image');
-      let x = 0;
-      let y = 0;
-      let xSpeed = 2;
-      let ySpeed = 2;
-      let lastTime = performance.now();
-      const fps = 60;
-      const interval = 1000 / fps;
-
-      function animate(currentTime) {
-        if (currentTime - lastTime >= interval) {
-          const viewportWidth = window.innerWidth - bouncingImage.offsetWidth;
-          const viewportHeight = window.innerHeight - bouncingImage.offsetHeight;
-
-          // Update position
-          x += xSpeed;
-          y += ySpeed;
-
-          // Check for collisions with viewport edges
-          if (x <= 0 || x >= viewportWidth) {
-            xSpeed = -xSpeed;
-            changeBorderColor();
-          }
-          if (y <= 0 || y >= viewportHeight) {
-            ySpeed = -ySpeed;
-            changeBorderColor();
-          }
-
-          // Keep within bounds
-          x = Math.max(0, Math.min(x, viewportWidth));
-          y = Math.max(0, Math.min(y, viewportHeight));
-
-          // Update position
-          bouncingImage.style.transform = `translate(${x}px, ${y}px)`;
-          lastTime = currentTime;
-        }
-        requestAnimationFrame(animate);
-      }
-
-      function changeBorderColor() {
-        const colors = ['#3b82f6', '#8b5cf6', '#10b981', '#ef4444'];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        bouncingImage.querySelector('img').style.borderColor = randomColor;
-      }
-
-      // Start animation
-      requestAnimationFrame(animate);
-
-      // Adjust bouncing image position on window resize
-      window.addEventListener('resize', () => {
-        const viewportWidth = window.innerWidth - bouncingImage.offsetWidth;
-        const viewportHeight = window.innerHeight - bouncingImage.offsetHeight;
-        x = Math.min(x, viewportWidth);
-        y = Math.min(y, viewportHeight);
-      });
-
       /* Edit functionality commented out
       // GitHub API Configuration
       const GITHUB_TOKEN = ''; // You'll need to add your GitHub token here
@@ -1310,24 +1219,8 @@
       const chatInput = document.querySelector(".chatbot-input input");
       const chatSend = document.querySelector(".chatbot-send");
       const chatMessages = document.querySelector(".chatbot-messages");
-      const bouncingProfilePic = document.querySelector(".bouncing-image");
 
       let isChatOpen = false;
-
-      function openChatWithGreeting(fromBouncing = false) {
-        isChatOpen = true;
-        chatbotContainer.classList.add("active");
-        chatMessages.innerHTML = ''; // Clear previous messages
-        
-        if (fromBouncing) {
-          addBotMessage("Hi there! 👋 I noticed you clicked on Andrew's bouncing picture!");
-          setTimeout(() => {
-            addBotMessage("Would you like to get in touch with Andrew directly? I can help you reach out to him, or feel free to ask me anything about his work and experience!");
-          }, 1000);
-        } else {
-          addBotMessage("Hello! I'm your AI assistant. How can I help you today?");
-        }
-      }
 
       // Toggle chatbot visibility
       chatbotToggle.addEventListener("click", () => {
@@ -1335,13 +1228,10 @@
         chatbotContainer.classList.toggle("active", isChatOpen);
 
         if (isChatOpen) {
-          openChatWithGreeting();
+          addBotMessage(
+            "Hello! I'm your AI assistant. How can I help you today?"
+          );
         }
-      });
-
-      // Add click handler for bouncing image
-      bouncingProfilePic.addEventListener("click", () => {
-        openChatWithGreeting(true);
       });
 
       chatbotClose.addEventListener("click", () => {
@@ -1354,48 +1244,28 @@
         greeting: "Hello! I'm your AI assistant. How can I help you today?",
         default: "I'm still learning. Could you rephrase that?",
         goodbye: "Goodbye! Have a great day!",
-        contact: "You can reach Andrew directly at andrewipwork@gmail.com, or connect with him on LinkedIn at linkedin.com/in/andrewipwork. Would you like me to show you his other social media profiles as well?",
-        social: "Here are Andrew's social profiles:\n• LinkedIn: linkedin.com/in/andrewipwork\n• GitHub: github.com/andrewip1027\n• Twitter: x.com/andrewipdev",
-        schedule: "Would you like to schedule a meeting with Andrew? You can use the contact form in the contact section, or email him directly at andrewipwork@gmail.com with your preferred time and date."
       };
 
       // Send message
       function sendMessage() {
-        const message = chatInput.value.trim().toLowerCase();
+        const message = chatInput.value.trim();
         if (message) {
           addUserMessage(message);
           chatInput.value = "";
 
-          // Enhanced response logic
+          // Simple response logic
           let response = aiResponses.default;
 
-          if (message.includes("hello") || message.includes("hi")) {
+          if (
+            message.toLowerCase().includes("hello") ||
+            message.toLowerCase().includes("hi")
+          ) {
             response = aiResponses.greeting;
-          } else if (message.includes("bye") || message.includes("goodbye")) {
+          } else if (
+            message.toLowerCase().includes("bye") ||
+            message.toLowerCase().includes("goodbye")
+          ) {
             response = aiResponses.goodbye;
-          } else if (
-            message.includes("contact") || 
-            message.includes("email") || 
-            message.includes("reach") || 
-            message.includes("talk to") ||
-            message.includes("get in touch")
-          ) {
-            response = aiResponses.contact;
-          } else if (
-            message.includes("social") || 
-            message.includes("profile") || 
-            message.includes("linkedin") ||
-            message.includes("github") ||
-            message.includes("twitter")
-          ) {
-            response = aiResponses.social;
-          } else if (
-            message.includes("schedule") || 
-            message.includes("meet") || 
-            message.includes("appointment") ||
-            message.includes("book")
-          ) {
-            response = aiResponses.schedule;
           }
 
           setTimeout(() => {
