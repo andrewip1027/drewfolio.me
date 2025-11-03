@@ -1515,28 +1515,6 @@
     </div>
 
     <script>
-      // Toggle Gallery expansion
-      function toggleGallery() {
-        const fullGallery = document.getElementById('fullGallery');
-        const toggleText = document.getElementById('galleryToggleText');
-        const toggleIcon = document.getElementById('galleryToggleIcon');
-        const isHidden = fullGallery.classList.contains('hidden');
-        
-        if (isHidden) {
-          fullGallery.classList.remove('hidden');
-          fullGallery.style.maxHeight = fullGallery.scrollHeight + "px";
-          toggleText.textContent = 'Hide Projects';
-          toggleIcon.style.transform = 'rotate(180deg)';
-        } else {
-          fullGallery.style.maxHeight = "0";
-          setTimeout(() => {
-            fullGallery.classList.add('hidden');
-          }, 500);
-          toggleText.textContent = 'Show All Projects';
-          toggleIcon.style.transform = 'rotate(0deg)';
-        }
-      }
-
       // Toggle section expansion
       function toggleSection(section) {
         section.classList.toggle('active-section');

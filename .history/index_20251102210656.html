@@ -831,7 +831,7 @@
             <div class="grid grid-cols-2 gap-4 mb-4">
               <div class="relative aspect-video overflow-hidden rounded-lg">
                 <img 
-                  src="images/1.jpg" 
+                  src="images/Gallery/20201116_040328.jpg" 
                   alt="Featured project showcase 1"
                   class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                   onclick="openImageModal(this.src)"
@@ -839,7 +839,7 @@
               </div>
               <div class="relative aspect-video overflow-hidden rounded-lg">
                 <img 
-                  src="images/2.jpg" 
+                  src="images/Gallery/20201123_235150.jpg" 
                   alt="Featured project showcase 2"
                   class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                   onclick="openImageModal(this.src)"
@@ -852,24 +852,7 @@
           <!-- Collapsible Gallery Grid -->
           <div id="fullGallery" class="hidden" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out">
             <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
-              <div class="relative aspect-video overflow-hidden rounded-lg">
-                <img src="images/3.jpg" alt="Project 3" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
-              </div>
-              <div class="relative aspect-video overflow-hidden rounded-lg">
-                <img src="images/4.jpg" alt="Project 4" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
-              </div>
-              <div class="relative aspect-video overflow-hidden rounded-lg">
-                <img src="images/5.jpg" alt="Project 5" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
-              </div>
-              <div class="relative aspect-video overflow-hidden rounded-lg">
-                <img src="images/6.jpg" alt="Project 6" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
-              </div>
-              <div class="relative aspect-video overflow-hidden rounded-lg">
-                <img src="images/7.jpg" alt="Project 7" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
-              </div>
-              <div class="relative aspect-video overflow-hidden rounded-lg">
-                <img src="images/8.jpg" alt="Project 8" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
-              </div>
+              <!-- Images will be dynamically loaded here -->
             </div>
           </div>
         </div>
@@ -1515,28 +1498,6 @@
     </div>
 
     <script>
-      // Toggle Gallery expansion
-      function toggleGallery() {
-        const fullGallery = document.getElementById('fullGallery');
-        const toggleText = document.getElementById('galleryToggleText');
-        const toggleIcon = document.getElementById('galleryToggleIcon');
-        const isHidden = fullGallery.classList.contains('hidden');
-        
-        if (isHidden) {
-          fullGallery.classList.remove('hidden');
-          fullGallery.style.maxHeight = fullGallery.scrollHeight + "px";
-          toggleText.textContent = 'Hide Projects';
-          toggleIcon.style.transform = 'rotate(180deg)';
-        } else {
-          fullGallery.style.maxHeight = "0";
-          setTimeout(() => {
-            fullGallery.classList.add('hidden');
-          }, 500);
-          toggleText.textContent = 'Show All Projects';
-          toggleIcon.style.transform = 'rotate(0deg)';
-        }
-      }
-
       // Toggle section expansion
       function toggleSection(section) {
         section.classList.toggle('active-section');
