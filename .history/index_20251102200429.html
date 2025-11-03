@@ -567,56 +567,22 @@
                   Automated Data Verification and Reporting – Developed tools using MS Excel, Python, and JavaScript to automate the review of business registrations, trademarks, and payment records, enhancing data accuracy and reducing processing time
                 </li>
               </ul>
-              <div class="mt-6 overflow-x-auto">
-                <div class="flex gap-4 pb-4" style="min-width: min-content">
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_1.jpg" 
-                      alt="Western Copper work image 1"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_2.jpg" 
-                      alt="Western Copper work image 2"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_3.png" 
-                      alt="Western Copper work image 3"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_4.jpg" 
-                      alt="Western Copper work image 4"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_5.jpg" 
-                      alt="Western Copper work image 5"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_6.jpg" 
-                      alt="Western Copper work image 6"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
+              <div class="grid grid-cols-2 gap-4 mt-6">
+                <div class="relative aspect-video overflow-hidden rounded-lg">
+                  <img 
+                    src="images/chinawork_1.jpg" 
+                    alt="Western Copper work experience image 1"
+                    class="object-cover w-full h-full transform group-hover:scale-105 transition duration-300 zoomable-image"
+                    onclick="openImageModal(this.src)"
+                  >
+                </div>
+                <div class="relative aspect-video overflow-hidden rounded-lg">
+                  <img 
+                    src="images/chinawork_2.jpg" 
+                    alt="Western Copper work experience image 2"
+                    class="object-cover w-full h-full transform group-hover:scale-105 transition duration-300 zoomable-image"
+                    onclick="openImageModal(this.src)"
+                  >
                 </div>
               </div>
             </div>
@@ -1490,11 +1456,7 @@
     </div>
 
     <script>
-      // Initialize image loading functions
-      function initializeGalleries() {
-        // Any gallery-specific initialization can go here
-      }
-
+      // Function to get all images directly from images folder (not in subfolders)
       function getDirectImagePaths() {
         const img = document.createElement('img');
         const paths = [];
@@ -1897,154 +1859,6 @@
       chatInput.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
           sendMessage();
-        }
-      });
-
-      // Gallery Image Loading
-      const galleryFolders = [
-        'images/Gallery/',
-        'images/Gallery/hktdc/',
-        'images/Gallery/interdev/',
-        'images/Gallery/powerpeg/',
-        'images/Gallery/western_copper/'
-      ];
-
-      // Function to load Western Copper specific images
-      async function loadWesternCopperImages() {
-        const container = document.getElementById('westernCopperGallery');
-        if (!container) return;
-
-        // Clear existing content
-        container.innerHTML = '';
-
-        // Create a flex container
-        const flexContainer = document.createElement('div');
-        flexContainer.className = 'flex gap-4';
-
-        // Get all images from the western-copper gallery folder
-        const westernCopperImages = Array.from(document.querySelectorAll('img'))
-          .map(img => img.src)
-          .filter(src => src.includes('Gallery/western_copper/'))
-          .map(src => src.split(window.location.href)[1] || src);
-
-        // Add each image to the container
-        for (const imagePath of westernCopperImages) {
-          const exists = await checkImage(imagePath);
-          if (exists) {
-            const imageElement = createGalleryImageElement(imagePath);
-            imageElement.className = 'relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg';
-            flexContainer.appendChild(imageElement);
-          }
-        }
-
-        container.appendChild(flexContainer);
-      }
-
-      // Function to create an image element
-      function createGalleryImageElement(imagePath) {
-        const div = document.createElement('div');
-        div.className = 'relative aspect-video overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300';
-        
-        const img = document.createElement('img');
-        img.src = imagePath;
-        img.alt = 'Project Gallery Image';
-        img.className = 'object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image';
-        img.onclick = () => openImageModal(imagePath);
-        
-        // Add loading="lazy" for better performance
-        img.loading = 'lazy';
-        
-        div.appendChild(img);
-        return div;
-      }
-
-      // Function to check if an image exists
-      function checkImage(imagePath) {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => resolve(true);
-          img.onerror = () => resolve(false);
-          img.src = imagePath;
-        });
-      }
-
-      // Function to populate gallery with images from all folders
-      async function populateGallery() {
-        const galleryGrid = document.getElementById('galleryGrid');
-        const allImages = new Set(); // Use Set to avoid duplicates
-
-        // Common image extensions
-        const extensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-        
-        // Scan existing image elements in the page for gallery paths
-        document.querySelectorAll('img').forEach(img => {
-          const src = img.src;
-          galleryFolders.forEach(folder => {
-            if (src.includes(folder)) {
-              const path = src.split(window.location.href)[1] || src;
-              allImages.add(path);
-            }
-          });
-        });
-
-        // Convert Set back to array and sort
-        const sortedImages = Array.from(allImages).sort();
-
-        // Create and append image elements
-        for (const imagePath of sortedImages) {
-          const exists = await checkImage(imagePath);
-          if (exists) {
-            const imageElement = createGalleryImageElement(imagePath);
-            galleryGrid.appendChild(imageElement);
-          }
-        }
-
-        // Update preview images in the always-visible section
-        const previewGrid = document.querySelector('.grid.grid-cols-2.gap-4.mb-4');
-        if (previewGrid && sortedImages.length >= 2) {
-          previewGrid.innerHTML = '';
-          for (let i = 0; i < 2; i++) {
-            if (sortedImages[i]) {
-              const previewElement = createGalleryImageElement(sortedImages[i]);
-              previewGrid.appendChild(previewElement);
-            }
-          }
-        }
-      }
-
-      // Initialize galleries when page loads
-      window.addEventListener('load', async () => {
-        // First, check if our server endpoint exists
-        const serverAvailable = await fetch('api/check').catch(() => false);
-        
-        if (serverAvailable) {
-          // If server is available, use the directory scanning approach
-          await populateGallery();
-          
-          // Load section galleries
-          await Promise.all([
-            loadWesternCopperImages(),
-            populateSectionGallery('hktdcGallery', 'images/Gallery/hktdc'),
-            populateSectionGallery('powerpegGallery', 'images/Gallery/powerpeg'),
-            populateSectionGallery('interdevGallery', 'images/Gallery/interdev')
-          ]);
-        } else {
-          // Fallback to static image loading
-          const staticGallery = document.getElementById('galleryGrid');
-          if (staticGallery) {
-            const baseGalleryPath = 'images/Gallery/';
-            ['western-copper', 'hktdc', 'powerpeg', 'interdev'].forEach(folder => {
-              const div = document.createElement('div');
-              div.className = 'relative aspect-video overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300';
-              const img = document.createElement('img');
-              img.src = `${baseGalleryPath}${folder}/example.jpg`;
-              img.alt = `${folder} Gallery Image`;
-              img.className = 'object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image';
-              img.onclick = () => openImageModal(img.src);
-              div.appendChild(img);
-              staticGallery.appendChild(div);
-            });
-          }
         }
       });
 

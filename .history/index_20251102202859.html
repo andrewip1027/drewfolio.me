@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <script src="js/contact.js" defer></script>
+    <script src="js/gallery.js" defer></script>
     <style>
       /* Image Modal Styles */
       .modal {
@@ -568,55 +569,8 @@
                 </li>
               </ul>
               <div class="mt-6 overflow-x-auto">
-                <div class="flex gap-4 pb-4" style="min-width: min-content">
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_1.jpg" 
-                      alt="Western Copper work image 1"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_2.jpg" 
-                      alt="Western Copper work image 2"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_3.png" 
-                      alt="Western Copper work image 3"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_4.jpg" 
-                      alt="Western Copper work image 4"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_5.jpg" 
-                      alt="Western Copper work image 5"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/chinawork_6.jpg" 
-                      alt="Western Copper work image 6"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
+                <div id="westernCopperGallery" class="flex gap-4 pb-4" style="min-width: min-content; overflow-x: auto; -webkit-overflow-scrolling: touch">
+                  <!-- Images will be loaded dynamically from western_copper folder by gallery.js -->
                 </div>
               </div>
             </div>
@@ -1490,9 +1444,37 @@
     </div>
 
     <script>
-      // Initialize image loading functions
-      function initializeGalleries() {
-        // Any gallery-specific initialization can go here
+      // Function to get all images directly from images folder (not in subfolders)
+      // Function to load Western Copper images
+      async function loadWesternCopperImages() {
+        const container = document.getElementById('westernCopperGallery');
+        if (!container) return;
+
+        try {
+          const response = await fetch('images/Gallery/western_copper/');
+          const files = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(files, 'text/html');
+          const links = Array.from(doc.querySelectorAll('a'))
+            .map(a => a.getAttribute('href'))
+            .filter(href => href && href.match(/\.(jpg|jpeg|png|gif)$/i))
+            .map(href => `images/Gallery/western_copper/${href}`);
+
+          // Create image elements for each file
+          for (const imagePath of links) {
+            const div = document.createElement('div');
+            div.className = 'relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg';
+            const img = document.createElement('img');
+            img.src = imagePath;
+            img.alt = 'Western Copper work image';
+            img.className = 'object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image';
+            img.onclick = () => openImageModal(img.src);
+            div.appendChild(img);
+            container.appendChild(div);
+          }
+        } catch (error) {
+          console.error('Error loading western_copper images:', error);
+        }
       }
 
       function getDirectImagePaths() {

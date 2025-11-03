@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Gallery | Andrew's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-content {
+        max-width: 90%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+      }
+
+      .modal.active .modal-content {
+        transform: scale(1);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .modal-close:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+      }
+
+      .zoomable-image {
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+      }
+
+      .zoomable-image:hover {
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="index.html" class="text-2xl font-bold hover:text-gray-200 transition">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Portfolio
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <header class="py-16 gradient-bg text-white">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">Project Gallery</h1>
+        <p class="text-xl text-center max-w-3xl mx-auto">
+          A comprehensive showcase of my professional work, technical projects, and development journey.
+        </p>
+      </div>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20201116_040328.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20201123_235150.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20201203_103444.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20201204_084250.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20201214_174530.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20201218_134434.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20201220_192656.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230404_133340.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230404_133356.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230530_110301.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230530_110920.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_110832.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_111011.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_113709.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_152534.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_153418.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_154317.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_172429.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_173725.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20230531_175731.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20231223_233814.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20240223_183637.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20240223_183643.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20240311_090714.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20240311_122413.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="images/Gallery/20240405_092927.jpg" alt="Gallery Image" class="w-full h-full object-cover zoomable-image" onclick="openImageModal(this.src)">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>&copy; 2025 Andrew's Professional Portfolio. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-6">
+          <a href="https://www.linkedin.com/in/andrewipwork" class="hover:text-gray-200 transition">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/andrewip1027" class="hover:text-gray-200 transition">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://x.com/andrewipdev" class="hover:text-gray-200 transition">
+            <i class="fab fa-X"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="modal">
+      <span class="modal-close" onclick="closeImageModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+      // Image Modal functionality
+      function openImageModal(imageSrc) {
+        const modal = document.querySelector('.modal');
+        const modalImg = document.getElementById('modalImage');
+        modal.classList.add('active');
+        
+        // Add loading state
+        modalImg.style.opacity = '0';
+        const loader = document.createElement('div');
+        loader.className = 'loader';
+        modal.appendChild(loader);
+        
+        // Load image
+        modalImg.onload = function() {
+          modalImg.style.opacity = '1';
+          if (loader) loader.remove();
+        };
+        
+        modalImg.onerror = function() {
+          console.error('Failed to load image:', imageSrc);
+          closeImageModal();
+          alert('Failed to load image. Please try again.');
+        };
+        
+        modalImg.src = imageSrc;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeImageModal() {
+        const modal = document.querySelector('.modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        const loader = modal.querySelector('.loader');
+        if (loader) loader.remove();
+      }
+
+      // Preload images
+      window.addEventListener('load', function() {
+        const images = document.querySelectorAll('.zoomable-image');
+        images.forEach(img => {
+          img.onerror = function() {
+            console.error('Failed to load image:', img.src);
+            img.style.display = 'none';
+          };
+        });
+      });
+
+      // Close modal when clicking outside the image
+      document.querySelector('.modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeImageModal();
+        }
+      });
+
+      // Close modal with escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeImageModal();
+        }
+      });
+    </script>
+  </body>
+</html>
