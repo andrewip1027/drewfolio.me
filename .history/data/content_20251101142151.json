@@ -1,0 +1,28 @@
+{
+  "experience": [
+    {
+      "id": "sf-express",
+      "title": "Sales & Web Developer",
+      "company": "SF Express / FlashShip",
+      "location": "Markham, Toronto",
+      "date": "2025",
+      "responsibilities": [
+        "Created promotional content and social media marketing campaigns for FlashShip, an authorized partner of SF Express",
+        "Facilitated international shipping services between Canada and Asia, including Hong Kong, Mainland China, Macau, and other Asian destinations",
+        "Developed and maintained web content to showcase shipping services and promotional materials"
+      ]
+    },
+    {
+      "id": "powerpeg",
+      "title": "Application Developer",
+      "company": "PowerPeg Technology Limited",
+      "location": "Hong Kong",
+      "date": "2023",
+      "responsibilities": [
+        "Deployed and maintained Power saving and monitoring applications for critical public facilities, including hospitals, manufacturing plants, and power stations",
+        "Designed and developed a cross-platform Progressive Web App for public facilities, enabling engineers to generate and scan QR codes linked to machine operational manuals",
+        "Maintained and optimized Schneider Electric's Power Monitoring Expert (PME) application, ensuring robust performance and real-time monitoring"
+      ]
+    }
+  ]
+}
