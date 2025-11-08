@@ -148,64 +148,6 @@
         background-color: #3b82f6;
         color: white;
       }
-
-      /* Tab Styles */
-      .tab-btn {
-        color: #6b7280;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        position: relative;
-      }
-
-      .tab-btn:hover {
-        color: #3b82f6;
-      }
-
-      .active-tab {
-        background: white;
-        color: #3b82f6;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .tab-content {
-        display: none;
-        opacity: 0;
-        animation: fadeOut 0.3s ease;
-      }
-
-      .active-content {
-        display: block;
-        opacity: 1;
-        animation: fadeIn 0.5s ease, slideIn 0.5s ease;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeOut {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0;
-        }
-      }
-
-      @keyframes slideIn {
-        from {
-          transform: translateY(20px);
-        }
-        to {
-          transform: translateY(0);
-        }
-      }
     </style>
   </head>
   <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -365,43 +307,13 @@
       </div>
     </section>
 
-    <!-- Tabbed Section: About, Skills, Experience -->
+    <!-- About Section -->
     <section id="about" class="py-20 bg-white">
       <div class="container mx-auto px-6">
-        <!-- Tab Navigation -->
-        <div class="flex justify-center mb-12">
-          <div class="inline-flex bg-gray-100 rounded-lg p-1 shadow-md">
-            <button 
-              onclick="switchTab('about-tab')" 
-              id="about-tab-btn"
-              class="tab-btn active-tab px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              <i class="fas fa-user mr-2"></i>About Me
-            </button>
-            <button 
-              onclick="switchTab('skills-tab')" 
-              id="skills-tab-btn"
-              class="tab-btn px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              <i class="fas fa-code mr-2"></i>Technical Skills
-            </button>
-            <button 
-              onclick="switchTab('experience-tab')" 
-              id="experience-tab-btn"
-              class="tab-btn px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              <i class="fas fa-briefcase mr-2"></i>Work Experience
-            </button>
-          </div>
-        </div>
-
-        <!-- Tab Content -->
-        <div class="max-w-6xl mx-auto">
-          <!-- About Tab Content -->
-          <div id="about-tab" class="tab-content active-content">
-            <div class="max-w-4xl mx-auto">
-              <div class="md:w-full">
-                <p class="text-lg mb-6">
+        <h2 class="text-3xl font-bold text-center mb-16">About Me</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="md:w-full">
+            <p class="text-lg mb-6">
               I am a passionate Database and Application Developer with hands-on experience building data-driven solutions across healthcare, public services, and international trade. My focus is on developing systems that simplify complex workflows, improve efficiency, and elevate user experience — turning fragmented operations into cohesive, intelligent platforms.
             </p>
             <p class="text-lg mb-6">
@@ -431,10 +343,16 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Skills Tab Content -->
-          <div id="skills-tab" class="tab-content">
-            <div class="max-w-5xl mx-auto">
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">Technical Skills</h2>
+
+        <div class="max-w-4xl mx-auto">
           <div class="grid md:grid-cols-3 gap-8">
             <!-- Programming -->
             <div class="bg-white p-6 rounded-lg shadow-md">
@@ -616,10 +534,16 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Experience Tab Content -->
-          <div id="experience-tab" class="tab-content">
-            <div class="max-w-4xl mx-auto">
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">Work Experience</h2>
+
+        <div class="max-w-4xl mx-auto">
           <!-- SF Express / FlashShip -->
           <!-- <div id="flaship" class="mb-12 relative pl-8 timeline-item experience-section" onclick="toggleSection(this)">
             <div
@@ -1489,7 +1413,7 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-gray-50">
+    <section id="gallery" class="py-20 bg-white">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-16">Project Gallery</h2>
         <div class="max-w-4xl mx-auto">
@@ -2035,41 +1959,6 @@
       function initializeGalleries() {
         // Any gallery-specific initialization can go here
       }
-
-      // Tab switching functionality
-      function switchTab(tabId) {
-        // Get all tab buttons and content
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        // Remove active classes from all tabs
-        tabButtons.forEach(btn => btn.classList.remove('active-tab'));
-        tabContents.forEach(content => {
-          if (content.classList.contains('active-content')) {
-            content.classList.remove('active-content');
-          }
-        });
-        
-        // Add active class to clicked tab button
-        const activeButton = document.querySelector(`[onclick="switchTab('${tabId}')"]`);
-        if (activeButton) {
-          activeButton.classList.add('active-tab');
-        }
-        
-        // Show the selected tab content with animation
-        const activeContent = document.getElementById(tabId);
-        if (activeContent) {
-          // Small delay to allow fade out animation to complete
-          setTimeout(() => {
-            activeContent.classList.add('active-content');
-          }, 100);
-        }
-      }
-      
-      // Initialize first tab on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        switchTab('about-tab');
-      });
 
       /* Bouncing image functionality removed */
     </script>

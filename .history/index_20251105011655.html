@@ -2036,41 +2036,6 @@
         // Any gallery-specific initialization can go here
       }
 
-      // Tab switching functionality
-      function switchTab(tabId) {
-        // Get all tab buttons and content
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        // Remove active classes from all tabs
-        tabButtons.forEach(btn => btn.classList.remove('active-tab'));
-        tabContents.forEach(content => {
-          if (content.classList.contains('active-content')) {
-            content.classList.remove('active-content');
-          }
-        });
-        
-        // Add active class to clicked tab button
-        const activeButton = document.querySelector(`[onclick="switchTab('${tabId}')"]`);
-        if (activeButton) {
-          activeButton.classList.add('active-tab');
-        }
-        
-        // Show the selected tab content with animation
-        const activeContent = document.getElementById(tabId);
-        if (activeContent) {
-          // Small delay to allow fade out animation to complete
-          setTimeout(() => {
-            activeContent.classList.add('active-content');
-          }, 100);
-        }
-      }
-      
-      // Initialize first tab on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        switchTab('about-tab');
-      });
-
       /* Bouncing image functionality removed */
     </script>
 

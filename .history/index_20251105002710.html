@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Professional Portfolio | Database & Application Developer | Sales Specialist</title>
+    <title>Professional Portfolio | Database & Application Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -148,64 +148,6 @@
         background-color: #3b82f6;
         color: white;
       }
-
-      /* Tab Styles */
-      .tab-btn {
-        color: #6b7280;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        position: relative;
-      }
-
-      .tab-btn:hover {
-        color: #3b82f6;
-      }
-
-      .active-tab {
-        background: white;
-        color: #3b82f6;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .tab-content {
-        display: none;
-        opacity: 0;
-        animation: fadeOut 0.3s ease;
-      }
-
-      .active-content {
-        display: block;
-        opacity: 1;
-        animation: fadeIn 0.5s ease, slideIn 0.5s ease;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeOut {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0;
-        }
-      }
-
-      @keyframes slideIn {
-        from {
-          transform: translateY(20px);
-        }
-        to {
-          transform: translateY(0);
-        }
-      }
     </style>
   </head>
   <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -278,7 +220,7 @@
           </div>
           <h1 class="text-4xl md:text-6xl font-bold mb-6">Hi, I'm Andrew</h1>
           <h2 class="text-2xl md:text-3xl font-semibold mb-8">
-            Database & Application Developer |  Sales Specialist
+            Database & Application Developer
           </h2>
           <div class="text-center max-w-3xl mx-auto">
             <p class="text-xl mb-6">
@@ -328,14 +270,6 @@
                 <span class="block text-xs mt-2 opacity-70">2021 - 2022</span>
               </button>
               <button 
-                onclick="scrollToExperience('code-ninja')"
-                class="exp-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg transition-all duration-300 border border-white border-opacity-30 backdrop-blur-sm hover:transform hover:-translate-y-1"
-              >
-                <span class="block text-lg font-semibold">Code Ninja</span>
-                <span class="block text-sm opacity-80">Senior Teacher</span>
-                <span class="block text-xs mt-2 opacity-70">2020</span>
-              </button>
-              <button 
                 onclick="scrollToExperience('seneca')"
                 class="exp-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg transition-all duration-300 border border-white border-opacity-30 backdrop-blur-sm hover:transform hover:-translate-y-1"
               >
@@ -343,65 +277,19 @@
                 <span class="block text-sm opacity-80">Post Graduate Degree</span>
                 <span class="block text-xs mt-2 opacity-70">2020</span>
               </button>
-              <button 
-                onclick="scrollToExperience('interdev')"
-                class="exp-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg transition-all duration-300 border border-white border-opacity-30 backdrop-blur-sm hover:transform hover:-translate-y-1"
-              >
-                <span class="block text-lg font-semibold">Interdev Technologies</span>
-                <span class="block text-sm opacity-80">Application Developer</span>
-                <span class="block text-xs mt-2 opacity-70">2018 - 2020</span>
-              </button>
-              <button 
-                onclick="scrollToExperience('tmu')"
-                class="exp-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg transition-all duration-300 border border-white border-opacity-30 backdrop-blur-sm hover:transform hover:-translate-y-1"
-              >
-                <span class="block text-lg font-semibold">Toronto Metropolitan University</span>
-                <span class="block text-sm opacity-80">Bachelor Honor Degree, Computer Science</span>
-                <span class="block text-xs mt-2 opacity-70">2013 - 2018</span>
-              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tabbed Section: About, Skills, Experience -->
+    <!-- About Section -->
     <section id="about" class="py-20 bg-white">
       <div class="container mx-auto px-6">
-        <!-- Tab Navigation -->
-        <div class="flex justify-center mb-12">
-          <div class="inline-flex bg-gray-100 rounded-lg p-1 shadow-md">
-            <button 
-              onclick="switchTab('about-tab')" 
-              id="about-tab-btn"
-              class="tab-btn active-tab px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              <i class="fas fa-user mr-2"></i>About Me
-            </button>
-            <button 
-              onclick="switchTab('skills-tab')" 
-              id="skills-tab-btn"
-              class="tab-btn px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              <i class="fas fa-code mr-2"></i>Technical Skills
-            </button>
-            <button 
-              onclick="switchTab('experience-tab')" 
-              id="experience-tab-btn"
-              class="tab-btn px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              <i class="fas fa-briefcase mr-2"></i>Work Experience
-            </button>
-          </div>
-        </div>
-
-        <!-- Tab Content -->
-        <div class="max-w-6xl mx-auto">
-          <!-- About Tab Content -->
-          <div id="about-tab" class="tab-content active-content">
-            <div class="max-w-4xl mx-auto">
-              <div class="md:w-full">
-                <p class="text-lg mb-6">
+        <h2 class="text-3xl font-bold text-center mb-16">About Me</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="md:w-full">
+            <p class="text-lg mb-6">
               I am a passionate Database and Application Developer with hands-on experience building data-driven solutions across healthcare, public services, and international trade. My focus is on developing systems that simplify complex workflows, improve efficiency, and elevate user experience — turning fragmented operations into cohesive, intelligent platforms.
             </p>
             <p class="text-lg mb-6">
@@ -431,195 +319,16 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Skills Tab Content -->
-          <div id="skills-tab" class="tab-content">
-            <div class="max-w-5xl mx-auto">
-          <div class="grid md:grid-cols-3 gap-8">
-            <!-- Programming -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
-                >
-                  <i class="fas fa-code text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg">Programming</h3>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >JavaScript</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >C++</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >SQL</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >HTML/CSS</span
-                >
-              </div>
-            </div>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">Work Experience</h2>
 
-            <!-- Databases -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
-                >
-                  <i class="fas fa-database text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg">Databases</h3>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >MySQL</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >PostgreSQL</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >MongoDB</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Database Design</span
-                >
-              </div>
-            </div>
-
-            <!-- Tools -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
-                >
-                  <i class="fas fa-tools text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg">Tools & Platforms</h3>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Git</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Docker</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Power Monitoring Expert</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >MS Office</span
-                >
-              </div>
-            </div>
-
-            <!-- Web -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
-                >
-                  <i class="fas fa-globe text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg">Web Development</h3>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >React</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Node.js</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >PWA</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >REST APIs</span
-                >
-              </div>
-            </div>
-
-            <!-- GIS -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
-                >
-                  <i class="fas fa-map-marked-alt text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg">GIS & Mapping</h3>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >ArcGIS</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Leaflet</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Geospatial Analysis</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Routing Algorithms</span
-                >
-              </div>
-            </div>
-
-            <!-- Soft Skills -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
-                >
-                  <i class="fas fa-comments text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg">Soft Skills</h3>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Bilingual (English/Chinese)</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Technical Support</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Problem Solving</span
-                >
-                <span
-                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
-                  >Team Collaboration</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Experience Tab Content -->
-          <div id="experience-tab" class="tab-content">
-            <div class="max-w-4xl mx-auto">
+        <div class="max-w-4xl mx-auto">
           <!-- SF Express / FlashShip -->
           <!-- <div id="flaship" class="mb-12 relative pl-8 timeline-item experience-section" onclick="toggleSection(this)">
             <div
@@ -901,292 +610,58 @@
               </ul>
               <div class="mt-6 overflow-x-auto">
                 <div class="flex gap-4 pb-4" style="min-width: min-content">
-                  <!-- Numbered images -->
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/western_copper/1.jpg" 
-                      alt="Western Copper process 1"
+                      src="images/Gallery/WesternCopper/chinawork_1.jpg" 
+                      alt="Western Copper work image 1"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/western_copper/2.jpg" 
-                      alt="Western Copper process 2"
+                      src="images/Gallery/WesternCopper/chinawork_2.jpg" 
+                      alt="Western Copper work image 2"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/western_copper/3.png" 
-                      alt="Western Copper process 3"
+                      src="images/Gallery/WesternCopper/chinawork_3.png" 
+                      alt="Western Copper work image 3"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/western_copper/4.jpg" 
-                      alt="Western Copper process 4"
+                      src="images/Gallery/WesternCopper/chinawork_4.jpg" 
+                      alt="Western Copper work image 4"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/western_copper/5.jpg" 
-                      alt="Western Copper process 5"
+                      src="images/Gallery/WesternCopper/chinawork_5.jpg" 
+                      alt="Western Copper work image 5"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/western_copper/6.jpg" 
-                      alt="Western Copper process 6"
+                      src="images/Gallery/WesternCopper/chinawork_6.jpg" 
+                      alt="Western Copper work image 6"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/western_copper/7.jpg" 
-                      alt="Western Copper process 7"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/8.jpg" 
-                      alt="Western Copper process 8"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/9.jpg" 
-                      alt="Western Copper process 9"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/10.jpg" 
-                      alt="Western Copper process 10"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/11.jpg" 
-                      alt="Western Copper work image 11"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/12.jpg" 
-                      alt="Western Copper work image 12"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/13.jpg" 
-                      alt="Western Copper work image 13"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/14.jpg" 
-                      alt="Western Copper work image 14"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/15.jpg" 
-                      alt="Western Copper work image 15"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/16.jpg" 
-                      alt="Western Copper work image 16"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/17.jpg" 
-                      alt="Western Copper work image 17"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/18.jpg" 
-                      alt="Western Copper work image 18"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/19.jpg" 
-                      alt="Western Copper work image 19"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/20.jpg" 
-                      alt="Western Copper work image 20"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/21.jpg" 
-                      alt="Western Copper work image 21"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/22.jpg" 
-                      alt="Western Copper work image 22"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/23.jpg" 
-                      alt="Western Copper work image 23"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/24.jpg" 
-                      alt="Western Copper work image 24"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/25.jpg" 
-                      alt="Western Copper work image 25"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/26.jpg" 
-                      alt="Western Copper work image 26"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/27.jpg" 
-                      alt="Western Copper work image 27"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/28.jpg" 
-                      alt="Western Copper work image 28"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/29.jpg" 
-                      alt="Western Copper work image 29"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/30.jpg" 
-                      alt="Western Copper work image 30"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/31.jpg" 
-                      alt="Western Copper work image 31"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/32.jpg" 
-                      alt="Western Copper work image 32"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/33.jpg" 
-                      alt="Western Copper work image 33"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/34.jpg" 
-                      alt="Western Copper work image 34"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/35.jpg" 
-                      alt="Western Copper work image 35"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/western_copper/36.jpg" 
-                      alt="Western Copper work image 36"
+                      src="images/Gallery/WesternCopper/chinawork_7.jpg" 
+                      alt="Western Copper work image 7"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
@@ -1229,80 +704,40 @@
                 <div class="flex gap-4 pb-4" style="min-width: min-content">
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/code_ninja/20190820_145841(0).jpg" 
-                      alt="Code Ninja teaching experience - August 2019"
+                      src="images/Gallery/code_ninja/code_1.jpg" 
+                      alt="Code Ninja teaching experience 1"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/code_ninja/20190821_095349.jpg" 
-                      alt="Code Ninja teaching experience - August 21, 2019 morning"
+                      src="images/Gallery/code_ninja/code_2.jpg" 
+                      alt="Code Ninja teaching experience 2"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/code_ninja/20190821_141557.jpg" 
-                      alt="Code Ninja teaching experience - August 21, 2019 afternoon"
+                      src="images/Gallery/code_ninja/code_3.jpg" 
+                      alt="Code Ninja teaching experience 3"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/code_ninja/20191023_193532.jpg" 
-                      alt="Code Ninja teaching experience - October 2019"
+                      src="images/Gallery/code_ninja/code_4.jpg" 
+                      alt="Code Ninja teaching experience 4"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/code_ninja/IMG_20200117_092112.jpg" 
-                      alt="Code Ninja teaching experience - January 2020"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/code_ninja/IMG_20200120_093432.jpg" 
-                      alt="Code Ninja teaching experience - January 20, 2020"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/code_ninja/IMG_20200722_140429.jpg" 
-                      alt="Code Ninja teaching experience - July 2020"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/code_ninja/IMG_20200810_180252.jpg" 
-                      alt="Code Ninja teaching experience - August 10, 2020"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/code_ninja/IMG_20200817_200236.jpg" 
-                      alt="Code Ninja teaching experience - August 17, 2020"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                  <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/code_ninja/Screenshot_20190926-002434_WhatsApp.jpg" 
-                      alt="Code Ninja teaching experience - WhatsApp Screenshot"
+                      src="images/Gallery/code_ninja/code_5.jpg" 
+                      alt="Code Ninja teaching experience 5"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
@@ -1345,7 +780,7 @@
           </div>
           
           <!-- Interdev -->
-          <div id="interdev" class="mb-12 relative pl-8 timeline-item experience-section" onclick="toggleSection(this)">
+          <div class="mb-12 relative pl-8 timeline-item">
             <div
               class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-blue-200"
             ></div>
@@ -1359,7 +794,7 @@
                 <span class="text-gray-700 font-medium">Application Developer</span>
               </div>
               <div class="text-gray-500 mb-4">
-                Toronto, Canada • 2018 - 2020
+                Toronto, Canada • 2018 - 2019
               </div>
               <ul class="list-disc pl-5 space-y-2">
                 <li>
@@ -1454,7 +889,7 @@
           </div>
 
           <!-- TMU education  -->
-          <div id="tmu" class="mb-12 relative pl-8 timeline-item experience-section" onclick="toggleSection(this)">
+          <div id="seneca" class="mb-12 relative pl-8 timeline-item experience-section">
             <div
               class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-blue-200"
             ></div>
@@ -1465,9 +900,11 @@
                 class="flex flex-col md:flex-row md:justify-between md:items-center mb-4"
               >
                 <h3 class="text-2xl font-bold text-blue-600">Toronto Metropolitan University</h3>
-                <span class="text-gray-700 font-medium">Bachelor Honor degree, Computer Science</span>
+                <span class="text-gray-700 font-medium">Bachelor Honor degree, Computer Science
+</span>
               </div>
-              <div class="text-gray-500 mb-4">Toronto, Canada • June 2013 – Apr 2018 </div>
+              <div class="text-gray-500 mb-4">Toronto, Canada • June 2013 – Apr 2018
+</div>
               <ul class="list-disc pl-5 space-y-2">
                 <li>
                   Specialized in database development and application design, focusing on enterprise-level database solutions
@@ -1484,12 +921,17 @@
               </ul>
             </div>
           </div>
+
+
+     
+
+
         </div>
       </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-gray-50">
+    <section id="gallery" class="py-20 bg-white">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-16">Project Gallery</h2>
         <div class="max-w-4xl mx-auto">
@@ -1526,7 +968,24 @@
           <!-- Collapsible Gallery Grid -->
           <div id="fullGallery" class="hidden" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out">
             <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
-              <!-- Gallery images will be dynamically loaded here -->
+              <div class="relative aspect-video overflow-hidden rounded-lg">
+                <img src="images/3.jpg" alt="Project 3" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
+              </div>
+              <div class="relative aspect-video overflow-hidden rounded-lg">
+                <img src="images/4.jpg" alt="Project 4" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
+              </div>
+              <div class="relative aspect-video overflow-hidden rounded-lg">
+                <img src="images/5.jpg" alt="Project 5" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
+              </div>
+              <div class="relative aspect-video overflow-hidden rounded-lg">
+                <img src="images/6.jpg" alt="Project 6" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
+              </div>
+              <div class="relative aspect-video overflow-hidden rounded-lg">
+                <img src="images/7.jpg" alt="Project 7" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
+              </div>
+              <div class="relative aspect-video overflow-hidden rounded-lg">
+                <img src="images/8.jpg" alt="Project 8" class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image" onclick="openImageModal(this.src)">
+              </div>
             </div>
           </div>
         </div>
@@ -1581,6 +1040,197 @@
               Geographic Analysis
             </h4>
             <p class="text-gray-700">Bachelor's Degree, Computer Science</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">Technical Skills</h2>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Programming -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-code text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg">Programming</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >JavaScript</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >C++</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >SQL</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >HTML/CSS</span
+                >
+              </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-database text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg">Databases</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >MySQL</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >MongoDB</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Database Design</span
+                >
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-tools text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg">Tools & Platforms</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Git</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Docker</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Power Monitoring Expert</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >MS Office</span
+                >
+              </div>
+            </div>
+
+            <!-- Web -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-globe text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg">Web Development</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >React</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Node.js</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >PWA</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >REST APIs</span
+                >
+              </div>
+            </div>
+
+            <!-- GIS -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-map-marked-alt text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg">GIS & Mapping</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >ArcGIS</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Leaflet</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Geospatial Analysis</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Routing Algorithms</span
+                >
+              </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-comments text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg">Soft Skills</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Bilingual (English/Chinese)</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Technical Support</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Problem Solving</span
+                >
+                <span
+                  class="skill-pill bg-gray-100 px-3 py-1 rounded-full text-sm transition"
+                  >Team Collaboration</span
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2036,41 +1686,6 @@
         // Any gallery-specific initialization can go here
       }
 
-      // Tab switching functionality
-      function switchTab(tabId) {
-        // Get all tab buttons and content
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        // Remove active classes from all tabs
-        tabButtons.forEach(btn => btn.classList.remove('active-tab'));
-        tabContents.forEach(content => {
-          if (content.classList.contains('active-content')) {
-            content.classList.remove('active-content');
-          }
-        });
-        
-        // Add active class to clicked tab button
-        const activeButton = document.querySelector(`[onclick="switchTab('${tabId}')"]`);
-        if (activeButton) {
-          activeButton.classList.add('active-tab');
-        }
-        
-        // Show the selected tab content with animation
-        const activeContent = document.getElementById(tabId);
-        if (activeContent) {
-          // Small delay to allow fade out animation to complete
-          setTimeout(() => {
-            activeContent.classList.add('active-content');
-          }, 100);
-        }
-      }
-      
-      // Initialize first tab on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        switchTab('about-tab');
-      });
-
       /* Bouncing image functionality removed */
     </script>
 
@@ -2467,35 +2082,44 @@
       // Function to populate gallery with images from all folders
       async function populateGallery() {
         const galleryGrid = document.getElementById('galleryGrid');
-        if (!galleryGrid) return;
-        
-        galleryGrid.innerHTML = ''; // Clear existing content
-        const allImages = [];
+        const allImages = new Set(); // Use Set to avoid duplicates
 
-        // Collect all images from experience sections
-        document.querySelectorAll('.experience-section img, #gallery img').forEach(img => {
+        // Common image extensions
+        const extensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+        
+        // Scan existing image elements in the page for gallery paths
+        document.querySelectorAll('img').forEach(img => {
           const src = img.src;
-          // Only include Gallery folder images
-          if (src.includes('images/Gallery/')) {
-            const relativePath = src.substring(src.indexOf('images/Gallery/'));
-            if (!allImages.includes(relativePath)) {
-              allImages.push(relativePath);
+          galleryFolders.forEach(folder => {
+            if (src.includes(folder)) {
+              const path = src.split(window.location.href)[1] || src;
+              allImages.add(path);
             }
-          }
+          });
         });
 
-        // Also add images from main images folder
-        for (let i = 1; i <= 8; i++) {
-          allImages.push(`images/${i}.jpg`);
-        }
-
-        // Sort images
-        allImages.sort();
+        // Convert Set back to array and sort
+        const sortedImages = Array.from(allImages).sort();
 
         // Create and append image elements
-        for (const imagePath of allImages) {
-          const imageElement = createGalleryImageElement(imagePath);
-          galleryGrid.appendChild(imageElement);
+        for (const imagePath of sortedImages) {
+          const exists = await checkImage(imagePath);
+          if (exists) {
+            const imageElement = createGalleryImageElement(imagePath);
+            galleryGrid.appendChild(imageElement);
+          }
+        }
+
+        // Update preview images in the always-visible section
+        const previewGrid = document.querySelector('.grid.grid-cols-2.gap-4.mb-4');
+        if (previewGrid && sortedImages.length >= 2) {
+          previewGrid.innerHTML = '';
+          for (let i = 0; i < 2; i++) {
+            if (sortedImages[i]) {
+              const previewElement = createGalleryImageElement(sortedImages[i]);
+              previewGrid.appendChild(previewElement);
+            }
+          }
         }
       }
 
@@ -2624,7 +2248,7 @@
       });
 
       // Gallery Toggle Functionality
-      async function toggleGallery() {
+      function toggleGallery() {
         const fullGallery = document.getElementById('fullGallery');
         const toggleText = document.getElementById('galleryToggleText');
         const toggleIcon = document.getElementById('galleryToggleIcon');
@@ -2638,9 +2262,6 @@
             fullGallery.classList.add('hidden');
           }, 500);
         } else {
-          // Populate gallery before showing it
-          await populateGallery();
-          
           fullGallery.classList.remove('hidden');
           requestAnimationFrame(() => {
             // Force browser to handle the display change before setting maxHeight
