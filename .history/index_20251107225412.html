@@ -2762,10 +2762,43 @@
           console.log(JSON.stringify(visitorInfo, null, 2));
           console.log('===================');
 
-          // Send to Google Sheets
-          const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxFqSKp1UGwzul_pmEsnV8C3r1QdQGoG6ecUUP1AtLA0anKAK3IvB7gGQf-Ur4h1Oak/exec';
+          // OPTION 1: Send email via Formspree (easiest - 50 free/month)
+          // Sign up at https://formspree.io and replace with your form ID
+          const FORMSPREE_ID = 'YOUR_FORMSPREE_ID_HERE'; // e.g., 'xpznqrqb'
           
-          if (GOOGLE_SHEETS_URL) {
+          if (FORMSPREE_ID && FORMSPREE_ID !== 'YOUR_FORMSPREE_ID_HERE') {
+            try {
+              await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  subject: `New Visitor: ${visitorInfo.city}, ${visitorInfo.country}`,
+                  message: `
+🌍 Location: ${visitorInfo.city}, ${visitorInfo.region}, ${visitorInfo.country}
+📍 IP: ${visitorInfo.ip}
+⏰ Time: ${new Date(visitorInfo.timestamp).toLocaleString()}
+💻 Platform: ${visitorInfo.platform}
+🗣️ Language: ${visitorInfo.language}
+📱 Screen: ${visitorInfo.screenResolution}
+🌐 Timezone: ${visitorInfo.timezone}
+🔗 Referrer: ${visitorInfo.referrer}
+📄 Page: ${visitorInfo.currentPage}
+                  `,
+                  ...visitorInfo
+                })
+              });
+              console.log('✅ Visitor logged via Formspree');
+            } catch (error) {
+              console.error('Error sending to Formspree:', error);
+            }
+          }
+
+          // OPTION 2: Send to Google Sheets Web App
+          const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE';
+          
+          if (GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL !== 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE') {
             try {
               await fetch(GOOGLE_SHEETS_URL, {
                 method: 'POST',
@@ -2775,6 +2808,7 @@
                 },
                 body: JSON.stringify(visitorInfo)
               });
+              console.log('✅ Visitor logged to Google Sheets');
             } catch (error) {
               console.error('Error sending to Google Sheets:', error);
             }

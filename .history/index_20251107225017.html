@@ -2762,10 +2762,14 @@
           console.log(JSON.stringify(visitorInfo, null, 2));
           console.log('===================');
 
-          // Send to Google Sheets
-          const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxFqSKp1UGwzul_pmEsnV8C3r1QdQGoG6ecUUP1AtLA0anKAK3IvB7gGQf-Ur4h1Oak/exec';
+          // Send to Google Sheets (replace with your Web App URL)
+          // SETUP INSTRUCTIONS:
+          // 1. Go to https://script.google.com
+          // 2. Create new project, paste the code from setup-google-sheets.js
+          // 3. Deploy as Web App, copy the URL here
+          const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE';
           
-          if (GOOGLE_SHEETS_URL) {
+          if (GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL !== 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE') {
             try {
               await fetch(GOOGLE_SHEETS_URL, {
                 method: 'POST',

@@ -2762,25 +2762,7 @@
           console.log(JSON.stringify(visitorInfo, null, 2));
           console.log('===================');
 
-          // Send to Google Sheets
-          const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxFqSKp1UGwzul_pmEsnV8C3r1QdQGoG6ecUUP1AtLA0anKAK3IvB7gGQf-Ur4h1Oak/exec';
-          
-          if (GOOGLE_SHEETS_URL) {
-            try {
-              await fetch(GOOGLE_SHEETS_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(visitorInfo)
-              });
-            } catch (error) {
-              console.error('Error sending to Google Sheets:', error);
-            }
-          }
-
-          // Store in localStorage for viewing later (backup)
+          // Store in localStorage for viewing later
           const logs = JSON.parse(localStorage.getItem('visitorLogs') || '[]');
           logs.push(visitorInfo);
           // Keep only last 100 logs
