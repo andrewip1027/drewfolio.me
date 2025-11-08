@@ -201,42 +201,6 @@
         margin-bottom: 4rem;
         scroll-margin-top: 100px;
       }
-
-      /* Scrollable gallery indicator */
-      .scroll-indicator {
-        text-align: center;
-        padding: 12px;
-        color: #3b82f6;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.1), transparent);
-        border-radius: 8px;
-        margin-top: 8px;
-      }
-
-      .scroll-indicator:hover {
-        background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.2), transparent);
-        color: #2563eb;
-      }
-
-      .scroll-indicator i {
-        animation: bounce-horizontal 1.5s ease-in-out infinite;
-      }
-
-      @keyframes bounce-horizontal {
-        0%, 100% {
-          transform: translateX(0);
-        }
-        50% {
-          transform: translateX(8px);
-        }
-      }
     </style>
   </head>
   <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -795,10 +759,6 @@
                     >
                   </div>
                 </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
               </div>
             </div>
           </div>
@@ -920,10 +880,6 @@
                       onclick="openImageModal(this.src)"
                     >
                   </div>
-                </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
                 </div>
               </div>
             </div>
@@ -1250,10 +1206,6 @@
                     >
                   </div>
                 </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
               </div>
             </div>
           </div>     
@@ -1370,10 +1322,6 @@
                     >
                   </div>
                 </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
               </div>
             </div>
           </div>
@@ -1479,10 +1427,6 @@
                       onclick="openImageModal(this.src)"
                     >
                   </div>
-                </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
                 </div>
               </div>
             </div>
