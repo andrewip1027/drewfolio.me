@@ -169,10 +169,42 @@
       }
 
       .tab-content {
+        display: none;
+        opacity: 0;
+        animation: fadeOut 0.3s ease;
+      }
+
+      .active-content {
         display: block;
         opacity: 1;
-        margin-bottom: 4rem;
-        scroll-margin-top: 100px;
+        animation: fadeIn 0.5s ease, slideIn 0.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(20px);
+        }
+        to {
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
@@ -366,7 +398,7 @@
         <!-- Tab Content -->
         <div class="max-w-6xl mx-auto">
           <!-- About Tab Content -->
-          <div id="about-tab" class="tab-content">
+          <div id="about-tab" class="tab-content active-content">
             <div class="max-w-4xl mx-auto">
               <div class="md:w-full">
                 <p class="text-lg mb-6">
@@ -582,8 +614,6 @@
                   >Team Collaboration</span
                 >
               </div>
-            </div>
-          </div>
             </div>
           </div>
 

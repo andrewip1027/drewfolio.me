@@ -169,10 +169,42 @@
       }
 
       .tab-content {
+        display: none;
+        opacity: 0;
+        animation: fadeOut 0.3s ease;
+      }
+
+      .active-content {
         display: block;
         opacity: 1;
-        margin-bottom: 4rem;
-        scroll-margin-top: 100px;
+        animation: fadeIn 0.5s ease, slideIn 0.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(20px);
+        }
+        to {
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
@@ -366,7 +398,7 @@
         <!-- Tab Content -->
         <div class="max-w-6xl mx-auto">
           <!-- About Tab Content -->
-          <div id="about-tab" class="tab-content">
+          <div id="about-tab" class="tab-content active-content">
             <div class="max-w-4xl mx-auto">
               <div class="md:w-full">
                 <p class="text-lg mb-6">
@@ -582,8 +614,6 @@
                   >Team Collaboration</span
                 >
               </div>
-            </div>
-          </div>
             </div>
           </div>
 
@@ -2006,26 +2036,40 @@
         // Any gallery-specific initialization can go here
       }
 
-      // Tab navigation - scroll to section
+      // Tab switching functionality
       function switchTab(tabId) {
-        // Get all tab buttons
+        // Get all tab buttons and content
         const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
         
-        // Remove active class from all buttons
+        // Remove active classes from all tabs
         tabButtons.forEach(btn => btn.classList.remove('active-tab'));
+        tabContents.forEach(content => {
+          if (content.classList.contains('active-content')) {
+            content.classList.remove('active-content');
+          }
+        });
         
-        // Add active class to clicked button
+        // Add active class to clicked tab button
         const activeButton = document.querySelector(`[onclick="switchTab('${tabId}')"]`);
         if (activeButton) {
           activeButton.classList.add('active-tab');
         }
         
-        // Scroll to the section
-        const section = document.getElementById(tabId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Show the selected tab content with animation
+        const activeContent = document.getElementById(tabId);
+        if (activeContent) {
+          // Small delay to allow fade out animation to complete
+          setTimeout(() => {
+            activeContent.classList.add('active-content');
+          }, 100);
         }
       }
+      
+      // Initialize first tab on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        switchTab('about-tab');
+      });
 
       /* Bouncing image functionality removed */
     </script>
