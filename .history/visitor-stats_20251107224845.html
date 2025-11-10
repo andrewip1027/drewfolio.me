@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Statistics Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #333;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .location-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .location-item {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .location-item:hover {
+      background: #e9ecef;
+      transform: translateX(5px);
+    }
+
+    .location-name {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .location-count {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .recent-visitors {
+      margin-top: 20px;
+    }
+
+    .visitor-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border-left: 4px solid #667eea;
+    }
+
+    .visitor-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .visitor-time {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .visitor-location {
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .visitor-details {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .visitor-details div {
+      margin-bottom: 5px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      box-shadow: 0 4px 15px rgba(250, 112, 154, 0.4);
+    }
+
+    .no-data {
+      text-align: center;
+      padding: 40px;
+      color: #999;
+      font-size: 1.2rem;
+    }
+
+    .chart-container {
+      margin-top: 20px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1><i class="fas fa-chart-line"></i> Visitor Statistics Dashboard</h1>
+      <p>Real-time analytics for drewfolio.me</p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="btn" onclick="refreshStats()">
+        <i class="fas fa-sync-alt"></i> Refresh
+      </button>
+      <button class="btn btn-secondary" onclick="exportLogs()">
+        <i class="fas fa-download"></i> Export Logs
+      </button>
+      <button class="btn btn-danger" onclick="clearLogs()">
+        <i class="fas fa-trash"></i> Clear All Data
+      </button>
+      <button class="btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-home"></i> Back to Portfolio
+      </button>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-number" id="totalVisitors">0</div>
+        <div class="stat-label">Total Visitors</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-globe"></i></div>
+        <div class="stat-number" id="totalCountries">0</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-city"></i></div>
+        <div class="stat-number" id="totalCities">0</div>
+        <div class="stat-label">Cities</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+        <div class="stat-number" id="lastVisit">-</div>
+        <div class="stat-label">Last Visit</div>
+      </div>
+    </div>
+
+    <!-- Top Countries -->
+    <div class="section">
+      <h2><i class="fas fa-flag"></i> Visitors by Country</h2>
+      <div class="location-list" id="countryList"></div>
+    </div>
+
+    <!-- Top Cities -->
+    <div class="section">
+      <h2><i class="fas fa-map-marker-alt"></i> Visitors by City</h2>
+      <div class="location-list" id="cityList"></div>
+    </div>
+
+    <!-- Recent Visitors -->
+    <div class="section">
+      <h2><i class="fas fa-history"></i> Recent Visitors (Last 20)</h2>
+      <div class="recent-visitors" id="recentVisitors"></div>
+    </div>
+  </div>
+
+  <script>
+    // Load visitor logs from localStorage
+    function loadLogs() {
+      const logs = localStorage.getItem('visitorLogs');
+      return logs ? JSON.parse(logs) : [];
+    }
+
+    // Calculate statistics
+    function calculateStats() {
+      const logs = loadLogs();
+      
+      if (logs.length === 0) {
+        document.getElementById('totalVisitors').textContent = '0';
+        document.getElementById('totalCountries').textContent = '0';
+        document.getElementById('totalCities').textContent = '0';
+        document.getElementById('lastVisit').textContent = '-';
+        document.getElementById('countryList').innerHTML = '<div class="no-data">No visitor data available yet</div>';
+        document.getElementById('cityList').innerHTML = '<div class="no-data">No visitor data available yet</div>';
+        document.getElementById('recentVisitors').innerHTML = '<div class="no-data">No visitor data available yet</div>';
+        return;
+      }
+
+      // Total visitors
+      document.getElementById('totalVisitors').textContent = logs.length;
+
+      // Count by country
+      const countryCounts = {};
+      const cityCounts = {};
+
+      logs.forEach(log => {
+        const country = log.country || 'Unknown';
+        const city = log.city || 'Unknown';
+        
+        countryCounts[country] = (countryCounts[country] || 0) + 1;
+        cityCounts[city] = (cityCounts[city] || 0) + 1;
+      });
+
+      // Total countries and cities
+      document.getElementById('totalCountries').textContent = Object.keys(countryCounts).length;
+      document.getElementById('totalCities').textContent = Object.keys(cityCounts).length;
+
+      // Last visit
+      const lastLog = logs[logs.length - 1];
+      const lastVisitTime = new Date(lastLog.timestamp);
+      const now = new Date();
+      const diffMinutes = Math.floor((now - lastVisitTime) / 60000);
+      
+      let lastVisitText;
+      if (diffMinutes < 1) {
+        lastVisitText = 'Just now';
+      } else if (diffMinutes < 60) {
+        lastVisitText = `${diffMinutes}m ago`;
+      } else if (diffMinutes < 1440) {
+        lastVisitText = `${Math.floor(diffMinutes / 60)}h ago`;
+      } else {
+        lastVisitText = `${Math.floor(diffMinutes / 1440)}d ago`;
+      }
+      document.getElementById('lastVisit').textContent = lastVisitText;
+
+      // Display top countries
+      const sortedCountries = Object.entries(countryCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+
+      const countryListHTML = sortedCountries.map(([country, count]) => `
+        <div class="location-item">
+          <span class="location-name">${country}</span>
+          <span class="location-count">${count}</span>
+        </div>
+      `).join('');
+      document.getElementById('countryList').innerHTML = countryListHTML;
+
+      // Display top cities
+      const sortedCities = Object.entries(cityCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+
+      const cityListHTML = sortedCities.map(([city, count]) => `
+        <div class="location-item">
+          <span class="location-name">${city}</span>
+          <span class="location-count">${count}</span>
+        </div>
+      `).join('');
+      document.getElementById('cityList').innerHTML = cityListHTML;
+
+      // Display recent visitors
+      const recentLogs = logs.slice(-20).reverse();
+      const recentVisitorsHTML = recentLogs.map(log => {
+        const visitTime = new Date(log.timestamp).toLocaleString();
+        const location = `${log.city || 'Unknown'}, ${log.country || 'Unknown'}`;
+        
+        return `
+          <div class="visitor-card">
+            <div class="visitor-header">
+              <div class="visitor-location">
+                <i class="fas fa-map-marker-alt"></i> ${location}
+              </div>
+              <div class="visitor-time">
+                <i class="fas fa-clock"></i> ${visitTime}
+              </div>
+            </div>
+            <div class="visitor-details">
+              <div><i class="fas fa-network-wired"></i> <strong>IP:</strong> ${log.ip || 'Unknown'}</div>
+              <div><i class="fas fa-laptop"></i> <strong>Platform:</strong> ${log.platform || 'Unknown'}</div>
+              <div><i class="fas fa-language"></i> <strong>Language:</strong> ${log.language || 'Unknown'}</div>
+              <div><i class="fas fa-desktop"></i> <strong>Screen:</strong> ${log.screenResolution || 'Unknown'}</div>
+              <div><i class="fas fa-globe"></i> <strong>Timezone:</strong> ${log.timezone || 'Unknown'}</div>
+              <div><i class="fas fa-link"></i> <strong>Referrer:</strong> ${log.referrer || 'Direct visit'}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      document.getElementById('recentVisitors').innerHTML = recentVisitorsHTML;
+    }
+
+    // Refresh statistics
+    function refreshStats() {
+      calculateStats();
+      showNotification('Statistics refreshed!');
+    }
+
+    // Export logs
+    function exportLogs() {
+      const logs = loadLogs();
+      if (logs.length === 0) {
+        showNotification('No logs to export', 'error');
+        return;
+      }
+
+      const logText = logs.map(log => {
+        return `
+===== VISITOR LOG =====
+Time: ${log.timestamp}
+Location: ${log.city}, ${log.region}, ${log.country} (${log.countryCode})
+IP: ${log.ip}
+User Agent: ${log.userAgent}
+Platform: ${log.platform}
+Language: ${log.language}
+Screen: ${log.screenResolution}
+Timezone: ${log.timezone}
+Referrer: ${log.referrer}
+Page: ${log.currentPage}
+======================
+`;
+      }).join('\n');
+
+      const blob = new Blob([logText], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `visitor-logs-${new Date().toISOString().split('T')[0]}.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showNotification('Logs exported successfully!');
+    }
+
+    // Clear logs
+    function clearLogs() {
+      if (confirm('Are you sure you want to clear all visitor logs? This action cannot be undone.')) {
+        localStorage.removeItem('visitorLogs');
+        calculateStats();
+        showNotification('All logs cleared!', 'warning');
+      }
+    }
+
+    // Show notification
+    function showNotification(message, type = 'success') {
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'error' ? '#f5576c' : type === 'warning' ? '#fee140' : '#4caf50'};
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+      `;
+      notification.textContent = message;
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    }
+
+    // Add animation styles
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(400px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(400px); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Load stats on page load
+    window.addEventListener('load', calculateStats);
+
+    // Auto-refresh every 30 seconds
+    setInterval(calculateStats, 30000);
+  </script>
+</body>
+</html>

@@ -201,42 +201,6 @@
         margin-bottom: 4rem;
         scroll-margin-top: 100px;
       }
-
-      /* Scrollable gallery indicator */
-      .scroll-indicator {
-        text-align: center;
-        padding: 12px;
-        color: #3b82f6;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.1), transparent);
-        border-radius: 8px;
-        margin-top: 8px;
-      }
-
-      .scroll-indicator:hover {
-        background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.2), transparent);
-        color: #2563eb;
-      }
-
-      .scroll-indicator i {
-        animation: bounce-horizontal 1.5s ease-in-out infinite;
-      }
-
-      @keyframes bounce-horizontal {
-        0%, 100% {
-          transform: translateX(0);
-        }
-        50% {
-          transform: translateX(8px);
-        }
-      }
     </style>
   </head>
   <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -654,8 +618,8 @@
           <!-- Experience Tab Content -->
           <div id="experience-tab" class="tab-content">
             <div class="max-w-4xl mx-auto">
-          <!-- Flaship / SF Express -->
-          <div id="flaship" class="mb-12 relative pl-8 timeline-item experience-section" onclick="toggleSection(this)">
+          <!-- SF Express / FlashShip -->
+          <!-- <div id="flaship" class="mb-12 relative pl-8 timeline-item experience-section" onclick="toggleSection(this)">
             <div
               class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-blue-200"
             ></div>
@@ -663,61 +627,45 @@
               class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300"
             >
               <div class="experience-header flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                <h3 class="text-2xl font-bold text-blue-600">Flaship (SF Express Authorized Partner)</h3>
+                <h3 class="text-2xl font-bold text-blue-600">(SF Express)</h3>
                 <span class="text-gray-700 font-medium">Sales & System Developer</span>
               </div>
               <div class="text-gray-500 mb-4">Markham, Ontario | Canada–Asia Freight & Courier Services • 2025</div>
-              
               <div class="experience-intro">
-                <p class="text-gray-700 mb-4 font-semibold">
-                  <strong>Summary:</strong> Developed full-stack logistics platform for SF Express authorized partner, streamlining customer onboarding, automated label generation, and shipment tracking for Canada-to-Asia courier services. Integrated Google Sheets and PostgreSQL backend to handle multi-stage workflows, managed front-desk operations, and drove digital marketing initiatives that enhanced client engagement and business growth.
+                <p class="text-gray-700 mb-4">
+                  Flaship is an authorized partner of SF Express, providing parcel and document shipping services from Canada to destinations across Hong Kong, Mainland China, Macau, Japan, Singapore, and the rest of Asia. As an agent and courier-service centre supporting smaller businesses and individuals, Flaship needed a fast, reliable, and scalable platform — one I built from the ground up.
                 </p>
               </div>
-              
               <div class="experience-details" style="max-height: 0;">
                 <div class="mb-4">
-                  <h4 class="font-semibold text-gray-800 mb-2">Key Responsibilities:</h4>
+                  <h4 class="font-semibold text-gray-800 mb-2">Key Contributions:</h4>
                   <ul class="list-disc pl-5 space-y-2">
                     <li>
-                      <strong>Full-Stack Platform Development:</strong> Built end-to-end logistics system from scratch using Google Sheets (data layer) and Supabase/PostgreSQL (backend) with custom APIs for QR-code customer check-in, automated shipping label generation, and real-time shipment tracking
+                      Built Flaship's logistics platform from scratch, creating a seamless workflow from customer QR-code check-in and address entry to automated shipping label generation and printing
                     </li>
                     <li>
-                      <strong>Database & Systems Integration:</strong> Designed scalable database architecture to manage customer records, shipment workflows, and multi-stage tracking across Canada-to-Asia delivery networks
+                      Designed and developed an end-to-end logistics system using Google Sheets as the operational data layer and Supabase (PostgreSQL) as the backend — enabling scalable multi-stage shipment tracking, database integration, and streamlined label creation
                     </li>
                     <li>
-                      <strong>Client Consultation & Solutions:</strong> Provided logistics consulting to clients on shipping optimization, warehousing strategies, and e-commerce fulfillment, improving customer satisfaction and retention rates
+                      Consulted with clients across regions to optimize shipping, warehousing, and e-commerce logistics strategies, improving customer satisfaction and repeat engagement
                     </li>
                     <li>
-                      <strong>Digital Marketing & Brand Development:</strong> Created promotional videos, managed social media campaigns, and implemented targeted advertising strategies that increased online visibility and client acquisition
+                      Enhanced Flaship's digital marketing presence by creating interactive promotional videos, managing social media updates, and developing targeted advertising strategies that increased online visibility and sector reach
                     </li>
                     <li>
-                      <strong>Operations Management:</strong> Handled daily front-desk operations including customer service, shipment inquiries, payment processing, and coordination between physical courier services and digital platform systems
-                    </li>
-                    <li>
-                      <strong>Process Automation:</strong> Developed automated workflows for label printing, customer notifications, and data synchronization, reducing manual processing time by 60%
+                      Handled front-desk operations daily, assisting walk-in customers, managing shipment inquiries, and ensuring smooth coordination between the physical courier process and the digital logistics system
                     </li>
                   </ul>
                 </div>
-                
-                <div class="mb-4">
-                  <h4 class="font-semibold text-gray-800 mb-2">Technical Skills Applied:</h4>
-                  <ul class="list-disc pl-5 space-y-1">
-                    <li>Full-Stack Development: JavaScript, HTML/CSS, Google Apps Script</li>
-                    <li>Database Management: PostgreSQL (Supabase), Google Sheets API</li>
-                    <li>System Integration: REST APIs, QR code generation/scanning, automated workflows</li>
-                    <li>Digital Marketing: Social media management, video production, advertising campaigns</li>
-                  </ul>
-                </div>
-                
                 <div>
-                  <h4 class="font-semibold text-gray-800 mb-2">Impact & Achievements:</h4>
+                  <h4 class="font-semibold text-gray-800 mb-2">Impact:</h4>
                   <p class="text-gray-700">
-                    Successfully deployed enterprise-grade logistics platform that unified customer onboarding, operations, and marketing for Flaship — transforming it into a trusted, technology-driven courier partner in the Greater Toronto Area. Platform handles 50+ daily shipments with automated tracking and seamless integration with SF Express's global freight-forwarding network.
+                    Delivered a reliable logistics platform that unified customer onboarding, operations, and marketing — transforming Flaship into a trusted, tech-driven courier partner in the Markham region and part of SF Express's global freight-forwarding network.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           
 <!-- hktdc Trade Fairs -->
           <div id="trade-fairs" class="mb-12 relative pl-8 timeline-item experience-section" onclick="toggleSection(this)">
@@ -794,10 +742,6 @@
                       onclick="openImageModal(this.src)"
                     >
                   </div>
-                </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
                 </div>
               </div>
             </div>
@@ -920,10 +864,6 @@
                       onclick="openImageModal(this.src)"
                     >
                   </div>
-                </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
                 </div>
               </div>
             </div>
@@ -1250,10 +1190,6 @@
                     >
                   </div>
                 </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
               </div>
             </div>
           </div>     
@@ -1370,10 +1306,6 @@
                     >
                   </div>
                 </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
-                </div>
               </div>
             </div>
           </div>
@@ -1479,10 +1411,6 @@
                       onclick="openImageModal(this.src)"
                     >
                   </div>
-                </div>
-                <div class="scroll-indicator">
-                  <span>Scroll for more images</span>
-                  <i class="fas fa-arrow-right"></i>
                 </div>
               </div>
             </div>
@@ -2834,10 +2762,14 @@
           console.log(JSON.stringify(visitorInfo, null, 2));
           console.log('===================');
 
-          // Send to Google Sheets
-          const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxFqSKp1UGwzul_pmEsnV8C3r1QdQGoG6ecUUP1AtLA0anKAK3IvB7gGQf-Ur4h1Oak/exec';
+          // Send to Google Sheets (replace with your Web App URL)
+          // SETUP INSTRUCTIONS:
+          // 1. Go to https://script.google.com
+          // 2. Create new project, paste the code from setup-google-sheets.js
+          // 3. Deploy as Web App, copy the URL here
+          const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE';
           
-          if (GOOGLE_SHEETS_URL) {
+          if (GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL !== 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE') {
             try {
               await fetch(GOOGLE_SHEETS_URL, {
                 method: 'POST',
