@@ -416,38 +416,40 @@
     <!-- Tabbed Section: About, Skills, Experience -->
     <section id="about" class="py-20 bg-white">
       <div class="container mx-auto px-6">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold text-center mb-12">My Experiences</h2>
+  <div class="grid lg:grid-cols-2 gap-12 lg:items-center">
+          <!-- Left Column: Experiences & Skills -->
+          <div class="lg:self-center">
+            <h2 class="text-3xl font-bold text-center mb-12">My Experiences</h2>
 
-          <!-- Tab Navigation -->
-          <div class="flex justify-center mb-12">
-            <div class="inline-flex bg-gray-100 rounded-lg p-1 shadow-md">
-              <button
-                onclick="switchTab('about-tab')"
-                id="about-tab-btn"
-                class="tab-btn active-tab px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-              >
-                <i class="fas fa-user mr-2"></i>About Me
-              </button>
-              <button
-                onclick="switchTab('skills-tab')"
-                id="skills-tab-btn"
-                class="tab-btn px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-              >
-                <i class="fas fa-code mr-2"></i>Technical Skills
-              </button>
-              <button
-                onclick="switchTab('experience-tab')"
-                id="experience-tab-btn"
-                class="tab-btn px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-              >
-                <i class="fas fa-briefcase mr-2"></i>Work Experience
-              </button>
+            <!-- Tab Navigation -->
+            <div class="flex justify-center mb-12">
+              <div class="inline-flex bg-gray-100 rounded-lg p-1 shadow-md">
+                <button
+                  onclick="switchTab('about-tab')"
+                  id="about-tab-btn"
+                  class="tab-btn active-tab px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                >
+                  <i class="fas fa-user mr-2"></i>About Me
+                </button>
+                <button
+                  onclick="switchTab('skills-tab')"
+                  id="skills-tab-btn"
+                  class="tab-btn px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                >
+                  <i class="fas fa-code mr-2"></i>Technical Skills
+                </button>
+                <button
+                  onclick="switchTab('experience-tab')"
+                  id="experience-tab-btn"
+                  class="tab-btn px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                >
+                  <i class="fas fa-briefcase mr-2"></i>Work Experience
+                </button>
+              </div>
             </div>
-          </div>
 
-          <!-- Tab Content -->
-          <div class="max-w-4xl mx-auto">
+            <!-- Tab Content -->
+            <div class="max-w-4xl mx-auto">
           <!-- About Tab Content -->
           <div id="about-tab" class="tab-content">
             <div class="max-w-4xl mx-auto">
@@ -775,7 +777,7 @@
                 <div class="flex gap-4 pb-4" style="min-width: min-content">
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/hktdc/hktdc.jpg" 
+                      src="images/Gallery/hktdc/20240126_185956.jpg" 
                       alt="HKTDC work experience image 1"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
@@ -783,7 +785,7 @@
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/hktdc/hktdc2.jpg" 
+                      src="images/Gallery/hktdc/20240223_183643.jpg" 
                       alt="HKTDC work experience image 2"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
@@ -791,7 +793,7 @@
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/hktdc/hktdc3.jpg" 
+                      src="images/Gallery/hktdc/20240311_090714.jpg" 
                       alt="HKTDC work experience image 3"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
@@ -799,7 +801,7 @@
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/hktdc/hktdc4.jpg" 
+                      src="images/Gallery/hktdc/20240311_122413.jpg" 
                       alt="HKTDC work experience image 4"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
@@ -807,16 +809,8 @@
                   </div>
                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
                     <img 
-                      src="images/Gallery/hktdc/hktdc5.jpg" 
+                      src="images/Gallery/hktdc/20240405_092927.jpg" 
                       alt="HKTDC work experience image 5"
-                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
-                      onclick="openImageModal(this.src)"
-                    >
-                  </div>
-                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
-                    <img 
-                      src="images/Gallery/hktdc/hktdc11.jpg" 
-                      alt="HKTDC work experience image 11"
                       class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
                       onclick="openImageModal(this.src)"
                     >
@@ -1702,9 +1696,10 @@
             <div class="bg-gray-50 p-6 rounded-lg shadow-md card-hover transition duration-300">
               <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
                 <img 
-                  src="https://via.placeholder.com/400x225/1e40af/ffffff?text=Flaship.ca"
+                  src="https://api.screenshotmachine.com/?key=free&url=https://flaship.ca/&dimension=1024x768&format=jpg&cacheLimit=0&delay=2000" 
                   alt="Flaship.ca Project"
                   class="object-cover w-full h-full transform hover:scale-105 transition duration-300"
+                  onerror="this.src='https://via.placeholder.com/400x225/1e40af/ffffff?text=Flaship.ca'"
                 >
               </div>
               <h3 class="text-xl font-bold text-blue-600 mb-2">Flaship.ca</h3>
@@ -1731,9 +1726,10 @@
             <div class="bg-gray-50 p-6 rounded-lg shadow-md card-hover transition duration-300">
               <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
                 <img 
-                  src="https://via.placeholder.com/400x225/3b82f6/ffffff?text=Flaship+Portal"
+                  src="https://api.screenshotmachine.com/?key=free&url=https://flaship-staff-portal1.vercel.app/&dimension=1024x768&format=jpg&cacheLimit=0&delay=2000" 
                   alt="Flaship Staff Portal Project"
                   class="object-cover w-full h-full transform hover:scale-105 transition duration-300"
+                  onerror="this.src='https://via.placeholder.com/400x225/3b82f6/ffffff?text=Flaship+Portal'"
                 >
               </div>
               <h3 class="text-xl font-bold text-blue-600 mb-2">Flaship Staff Portal</h3>
@@ -1759,9 +1755,10 @@
             <div class="bg-gray-50 p-6 rounded-lg shadow-md card-hover transition duration-300">
               <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
                 <img 
-                  src="https://via.placeholder.com/400x225/8b5cf6/ffffff?text=Volume+Calculator"
+                  src="https://api.screenshotmachine.com/?key=free&url=https://andrewip1027.github.io/VolumeCalculator/&dimension=1024x768&format=jpg&cacheLimit=0&delay=2000" 
                   alt="Volume Calculator Project"
                   class="object-cover w-full h-full transform hover:scale-105 transition duration-300"
+                  onerror="this.src='https://via.placeholder.com/400x225/8b5cf6/ffffff?text=Volume+Calculator'"
                 >
               </div>
               <h3 class="text-xl font-bold text-blue-600 mb-2">Volume Calculator</h3>
@@ -1787,9 +1784,10 @@
             <div class="bg-gray-50 p-6 rounded-lg shadow-md card-hover transition duration-300">
               <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
                 <img 
-                  src="https://via.placeholder.com/400x225/10b981/ffffff?text=King+Christ+Web"
+                  src="https://api.screenshotmachine.com/?key=free&url=https://andrewip1027.github.io/kingChristWeb/&dimension=1024x768&format=jpg&cacheLimit=0&delay=2000" 
                   alt="King Christ Web Project"
                   class="object-cover w-full h-full transform hover:scale-105 transition duration-300"
+                  onerror="this.src='https://via.placeholder.com/400x225/10b981/ffffff?text=King+Christ+Web'"
                 >
               </div>
               <h3 class="text-xl font-bold text-blue-600 mb-2">King Christ Web</h3>
