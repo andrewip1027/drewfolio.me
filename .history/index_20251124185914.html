@@ -318,7 +318,7 @@
 
       <!-- Vertical scroll status sidebar (desktop only) -->
     <aside id="scrollSidebar" role="navigation" aria-label="Section navigation" class="hidden lg:block fixed right-6 top-1/3 z-50">
-    <ul class="space-y-3 bg-white/30 backdrop-blur-md rounded-full p-2 shadow-md">
+        <ul class="space-y-3 bg-white/30 backdrop-blur-md rounded-full p-2 shadow-md">
           <li>
             <a class="sidebar-link flex items-center space-x-3 px-3 py-2 rounded-full transition-all duration-200" data-target="about" href="#about" title="About">
               <span class="dot w-2 h-2 rounded-full bg-gray-400"></span>
@@ -362,10 +362,6 @@
             </a>
           </li>
         </ul>
-        <div id="sidebarStatus" class="mt-3 text-center text-xs text-gray-700 px-3 py-2 rounded-md bg-white/80 shadow-sm">
-          <div id="sidebarStatusText">Section: — / —</div>
-          <div id="sidebarStatusProgress" class="h-1 mt-2 rounded bg-blue-500 w-0"></div>
-        </div>
       </aside>
 
     <!-- Hero Section -->
@@ -3266,23 +3262,6 @@ Page: ${log.currentPage}
             if (dot) dot.classList.toggle('bg-blue-500', i === idx);
             if (label) label.classList.toggle('text-blue-700', i === idx);
           });
-          // Update status display
-          const statusText = document.getElementById('sidebarStatusText');
-          const statusProgress = document.getElementById('sidebarStatusProgress');
-          if (statusText) {
-            const total = sections.length;
-            const humanIdx = idx >= 0 ? idx + 1 : 0;
-            statusText.textContent = `Section: ${humanIdx} / ${total}`;
-          }
-          if (statusProgress && idx >= 0) {
-            const sec = sections[idx];
-            const top = sec.offsetTop;
-            const height = sec.offsetHeight;
-            const centerPoint = window.scrollY + (window.innerHeight / 2);
-            const value = (centerPoint - top) / height; // 0..1
-            const percent = Math.max(0, Math.min(100, Math.round(value * 100)));
-            statusProgress.style.width = percent + '%';
-          }
         }
 
         // Update the progress for active section on scroll
@@ -3298,9 +3277,6 @@ Page: ${log.currentPage}
           const value = (centerPoint - top) / height; // 0..1
           const percent = Math.max(0, Math.min(100, Math.round(value * 100)));
           progress.style.width = percent + '%';
-          // update overall status bar too
-          const statusProgress = document.getElementById('sidebarStatusProgress');
-          if (statusProgress) statusProgress.style.width = percent + '%';
         }
 
         window.addEventListener('scroll', () => {

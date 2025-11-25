@@ -3266,23 +3266,6 @@ Page: ${log.currentPage}
             if (dot) dot.classList.toggle('bg-blue-500', i === idx);
             if (label) label.classList.toggle('text-blue-700', i === idx);
           });
-          // Update status display
-          const statusText = document.getElementById('sidebarStatusText');
-          const statusProgress = document.getElementById('sidebarStatusProgress');
-          if (statusText) {
-            const total = sections.length;
-            const humanIdx = idx >= 0 ? idx + 1 : 0;
-            statusText.textContent = `Section: ${humanIdx} / ${total}`;
-          }
-          if (statusProgress && idx >= 0) {
-            const sec = sections[idx];
-            const top = sec.offsetTop;
-            const height = sec.offsetHeight;
-            const centerPoint = window.scrollY + (window.innerHeight / 2);
-            const value = (centerPoint - top) / height; // 0..1
-            const percent = Math.max(0, Math.min(100, Math.round(value * 100)));
-            statusProgress.style.width = percent + '%';
-          }
         }
 
         // Update the progress for active section on scroll
@@ -3298,9 +3281,6 @@ Page: ${log.currentPage}
           const value = (centerPoint - top) / height; // 0..1
           const percent = Math.max(0, Math.min(100, Math.round(value * 100)));
           progress.style.width = percent + '%';
-          // update overall status bar too
-          const statusProgress = document.getElementById('sidebarStatusProgress');
-          if (statusProgress) statusProgress.style.width = percent + '%';
         }
 
         window.addEventListener('scroll', () => {
