@@ -247,7 +247,7 @@
           <div class="text-2xl font-bold">My Portfolio</div>
           <div class="hidden md:flex space-x-8">
             <a href="#about" class="hover:text-gray-200 transition">About</a>
-            <a href="#experience-tab" class="hover:text-gray-200 transition"
+            <a href="#experience" class="hover:text-gray-200 transition"
               >Experience</a
             >
             <a href="#gallery" class="hover:text-gray-200 transition"
@@ -262,7 +262,7 @@
             <a href="#education" class="hover:text-gray-200 transition"
               >Education</a
             >
-            <a href="#skills-tab" class="hover:text-gray-200 transition">Skills</a>
+            <a href="#skills" class="hover:text-gray-200 transition">Skills</a>
             <a href="#contact" class="hover:text-gray-200 transition"
               >Contact</a
             >
@@ -278,7 +278,7 @@
             >About</a
           >
           <a
-            href="#experience-tab"
+            href="#experience"
             class="block py-2 hover:bg-blue-700 px-4 rounded transition"
             >Experience</a
           >
@@ -303,7 +303,7 @@
             >Education</a
           >
           <a
-            href="#skills-tab"
+            href="#skills"
             class="block py-2 hover:bg-blue-700 px-4 rounded transition"
             >Skills</a
           >
@@ -323,13 +323,6 @@
             <a class="sidebar-link flex items-center space-x-3 px-3 py-2 rounded-full transition-all duration-200" data-target="about" href="#about" title="About">
               <span class="dot w-2 h-2 rounded-full bg-gray-400"></span>
               <span class="label text-sm font-medium text-gray-700">About</span>
-              <span class="progress ml-2 block h-1 w-0 rounded bg-blue-500"></span>
-            </a>
-          </li>
-          <li>
-            <a class="sidebar-link flex items-center space-x-3 px-3 py-2 rounded-full transition-all duration-200" data-target="experience-tab" href="#experience-tab" title="Experience">
-              <span class="dot w-2 h-2 rounded-full bg-gray-400"></span>
-              <span class="label text-sm font-medium text-gray-700">Experience</span>
               <span class="progress ml-2 block h-1 w-0 rounded bg-blue-500"></span>
             </a>
           </li>
@@ -872,7 +865,14 @@
                       onclick="openImageModal(this.src)"
                     >
                   </div>
-                  <!-- Removed broken/non-existent hktdc11.jpg reference -->
+                   <div class="relative aspect-video w-64 flex-shrink-0 overflow-hidden rounded-lg">
+                    <img 
+                      src="images/Gallery/hktdc/hktdc11.jpg" 
+                      alt="HKTDC work experience image 11"
+                      class="object-cover w-full h-full transform hover:scale-105 transition duration-300 zoomable-image"
+                      onclick="openImageModal(this.src)"
+                    >
+                  </div>
                 </div>
                 <div class="scroll-indicator">
                   <span>Scroll for more images</span>
@@ -2932,14 +2932,8 @@
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
 
-          const targetHref = this.getAttribute("href");
-          const targetElement = document.querySelector(targetHref);
-
-          // If this anchor is for a tab id (experience-tab, skills-tab), trigger the tab switch
-          if (targetHref && targetHref.startsWith('#') && targetHref.endsWith('-tab') && typeof window.switchTab === 'function') {
-            const tabId = targetHref.substring(1);
-            try { window.switchTab(tabId); } catch (err) { /* ignore */ }
-          }
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
 
           if (targetElement) {
             window.scrollTo({
@@ -3317,17 +3311,8 @@ Page: ${log.currentPage}
         links.forEach(link => {
           link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = link.dataset.target;
-            const target = document.getElementById(targetId);
+            const target = document.getElementById(link.dataset.target);
             if (target) {
-              // If this is a tab content (like experience-tab, skills-tab) toggle the tab
-              if (targetId.endsWith('-tab') && typeof window.switchTab === 'function') {
-                try {
-                  window.switchTab(targetId);
-                } catch (err) {
-                  // ignore - switchTab may not exist
-                }
-              }
               window.scrollTo({ top: target.offsetTop - 64, behavior: 'smooth' });
             }
           });
